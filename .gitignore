@@ -1,0 +1,8 @@
+rae-crawler/rae-clean-html
+rae-crawler/rae-json
+rae-crawler/rae-raw-html
+rae-crawler/dictionary2.txt
+execution.log
+
+# generated files
+coverage

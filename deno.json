@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "rae-crawler": "deno run --check --allow-sys --allow-env --allow-net --allow-read --allow-write --watch ./rae-crawler/main.ts > execution.log",
+    "dev": "deno run --watch main.ts",
+    "test": "deno test .\\syllabify\\syllabify.test.ts .\\plurals\\get_plural.test.ts .\\letter.test.ts --coverage; deno coverage ./coverage --html"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "prettier": "npm:prettier@^3.5.1"
+  }
+}
