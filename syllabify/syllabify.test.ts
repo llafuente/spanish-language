@@ -2,10 +2,10 @@ import { expect } from "jsr:@std/expect";
 import { assertEquals } from "jsr:@std/assert";
 import {
   ACUTE,
-  PLAIN,
   HIATO_ACENTUAL,
   HIATO_SIMPLE_TYPE_1,
   HIATO_SIMPLE_TYPE_2,
+  PLAIN,
   syllabify,
   WordSyllables,
 } from "./syllabify.ts";
@@ -403,145 +403,163 @@ const t: WordSyllables[] = [
     accentuation: "GRAVE",
   },
   {
-  word: "baúl",
-  syllables: [
-    {
-      idx: 0,
-      phonology: { type: "Hiato acentual", syllable: "a-ú" },
-      text: "ba"
-    },
-    { idx: 2, phonology: null, text: "úl" }
-  ],
-  stressedSyllableIdx: 2,
-  accentedLetterIdx: 2,
-  accentuation: "AGUDA"
-},
-{
-  word: "sioux",
-  syllables: [
-    {
-      idx: 0,
-      phonology: { type: "Triptongo", syllable: "iou" },
-      text: "sioux"
-    }
-  ],
-  stressedSyllableIdx: 1,
-  accentedLetterIdx: -1,
-  accentuation: "AGUDA"
-},
-{
-  word: "despreciéis",
-  syllables: [
-    { idx: 0, phonology: null, text: "des" },
-    { idx: 3, phonology: null, text: "pre" },
-    {
-      idx: 6,
-      phonology: { type: "Triptongo", syllable: "iéi" },
-      text: "ciéis"
-    }
-  ],
-  stressedSyllableIdx: 3,
-  accentedLetterIdx: 8,
-  accentuation: "AGUDA"
-},
-{
-  word: "biaural",
-  syllables: [
-    {
-      idx: 0,
-      phonology: { type: "Triptongo", syllable: "iau" },
-      text: "biau"
-    },
-    { idx: 4, phonology: null, text: "ral" }
-  ],
-  stressedSyllableIdx: 2,
-  accentedLetterIdx: -1,
-  accentuation: "AGUDA"
-},
-{
-  word: "despreciéis",
-  syllables: [
-    { idx: 0, phonology: null, text: "des" },
-    { idx: 3, phonology: null, text: "pre" },
-    {
-      idx: 6,
-      phonology: { type: "Triptongo", syllable: "iéi" },
-      text: "ciéis"
-    }
-  ],
-  stressedSyllableIdx: 3,
-  accentedLetterIdx: 8,
-  accentuation: "AGUDA"
-},
-{
-  word: "lieis",
-  syllables: [
-    {
-      idx: 0,
-      phonology: { type: "Triptongo", syllable: "iei" },
-      text: "lieis"
-    }
-  ],
-  stressedSyllableIdx: 1,
-  accentedLetterIdx: -1,
-  accentuation: "AGUDA"
-},
-{
-  word: "ruido",
-  syllables: [
-    {
-      idx: 0,
-      phonology: { type: "Diptongo Homogéneo", syllable: "ui" },
-      text: "rui"
-    },
-    { idx: 3, phonology: null, text: "do" }
-  ],
-  stressedSyllableIdx: 1,
-  accentedLetterIdx: -1,
-  accentuation: "GRAVE"
-},
-{
-  word: "europa",
-  syllables: [
-    {
-      idx: 0,
-      phonology: { type: "Diptongo Decreciente", syllable: "eu" },
-      text: "eu"
-    },
-    { idx: 2, phonology: null, text: "ro" },
-    { idx: 4, phonology: null, text: "pa" }
-  ],
-  stressedSyllableIdx: 2,
-  accentedLetterIdx: -1,
-  accentuation: "GRAVE"
-},
-{
-  word: "matzah",
-  syllables: [
-    { idx: 0, phonology: null, text: "mat" },
-    { idx: 3, phonology: null, text: "zah" }
-  ],
-  stressedSyllableIdx: 2,
-  accentedLetterIdx: -1,
-  accentuation: "AGUDA"
-},
-{
-  word: "ciudad",
-  syllables: [
-    {
-      idx: 0,
-      phonology: { type: "Diptongo Homogéneo", syllable: "iu" },
-      text: "ciu"
-    },
-    { idx: 3, phonology: null, text: "dad" }
-  ],
-  stressedSyllableIdx: 2,
-  accentedLetterIdx: -1,
-  accentuation: "AGUDA"
-}
-
-
-
+    word: "baúl",
+    syllables: [
+      {
+        idx: 0,
+        phonology: { type: "Hiato acentual", syllable: "a-ú" },
+        text: "ba",
+      },
+      { idx: 2, phonology: null, text: "úl" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: 2,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "sioux",
+    syllables: [
+      {
+        idx: 0,
+        phonology: { type: "Triptongo", syllable: "iou" },
+        text: "sioux",
+      },
+    ],
+    stressedSyllableIdx: 1,
+    accentedLetterIdx: -1,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "despreciéis",
+    syllables: [
+      { idx: 0, phonology: null, text: "des" },
+      { idx: 3, phonology: null, text: "pre" },
+      {
+        idx: 6,
+        phonology: { type: "Triptongo", syllable: "iéi" },
+        text: "ciéis",
+      },
+    ],
+    stressedSyllableIdx: 3,
+    accentedLetterIdx: 8,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "biaural",
+    syllables: [
+      {
+        idx: 0,
+        phonology: { type: "Triptongo", syllable: "iau" },
+        text: "biau",
+      },
+      { idx: 4, phonology: null, text: "ral" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: -1,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "despreciéis",
+    syllables: [
+      { idx: 0, phonology: null, text: "des" },
+      { idx: 3, phonology: null, text: "pre" },
+      {
+        idx: 6,
+        phonology: { type: "Triptongo", syllable: "iéi" },
+        text: "ciéis",
+      },
+    ],
+    stressedSyllableIdx: 3,
+    accentedLetterIdx: 8,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "lieis",
+    syllables: [
+      {
+        idx: 0,
+        phonology: { type: "Triptongo", syllable: "iei" },
+        text: "lieis",
+      },
+    ],
+    stressedSyllableIdx: 1,
+    accentedLetterIdx: -1,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "ruido",
+    syllables: [
+      {
+        idx: 0,
+        phonology: { type: "Diptongo Homogéneo", syllable: "ui" },
+        text: "rui",
+      },
+      { idx: 3, phonology: null, text: "do" },
+    ],
+    stressedSyllableIdx: 1,
+    accentedLetterIdx: -1,
+    accentuation: "GRAVE",
+  },
+  {
+    word: "europa",
+    syllables: [
+      {
+        idx: 0,
+        phonology: { type: "Diptongo Decreciente", syllable: "eu" },
+        text: "eu",
+      },
+      { idx: 2, phonology: null, text: "ro" },
+      { idx: 4, phonology: null, text: "pa" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: -1,
+    accentuation: "GRAVE",
+  },
+  {
+    word: "matzah",
+    syllables: [
+      { idx: 0, phonology: null, text: "mat" },
+      { idx: 3, phonology: null, text: "zah" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: -1,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "ciudad",
+    syllables: [
+      {
+        idx: 0,
+        phonology: { type: "Diptongo Homogéneo", syllable: "iu" },
+        text: "ciu",
+      },
+      { idx: 3, phonology: null, text: "dad" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: -1,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "orquesta",
+    syllables: [
+      { idx: 0, phonology: null, text: "or" },
+      { idx: 2, phonology: null, text: "ques" },
+      { idx: 6, phonology: null, text: "ta" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: -1,
+    accentuation: "GRAVE",
+  },
+  {
+    word: "queso",
+    syllables: [
+      { idx: 0, phonology: null, text: "que" },
+      { idx: 3, phonology: null, text: "so" },
+    ],
+    stressedSyllableIdx: 1,
+    accentedLetterIdx: -1,
+    accentuation: "GRAVE",
+  },
 ];
 
 for (const x of t) {

@@ -8,6 +8,8 @@
 // utils
 // https://www.diptongos.net/glosario
 
+// https://en.wikipedia.org/wiki/Spanish_phonology#Syllable_structure
+
 import {
   is_closed_vowel,
   is_open_vowel,
@@ -27,23 +29,34 @@ export interface Hiato {
   syllable: string;
 }
 
-export const DIPTONGO_CREDIENTE = "Diptongo Creciente";
-export const DIPTONGO_DECREDIENTE = "Diptongo Decreciente";
-export const DIPTONGO_HOMOGENEO = "Diptongo Homogéneo";
+export const DIPHTHONG_CRESCENT = "Diptongo Creciente";
+export const DIPHTHONG_DESCENDING = "Diptongo Decreciente";
+export const DIPHTHONG_HOMOGENEOUS = "Diptongo Homogéneo";
 
-export interface Diptongo {
+// DIPHTHONGS
+export interface Diphthong {
   type:
-    | typeof DIPTONGO_CREDIENTE
-    | typeof DIPTONGO_DECREDIENTE
-    | typeof DIPTONGO_HOMOGENEO;
+    | typeof DIPHTHONG_CRESCENT
+    | typeof DIPHTHONG_DESCENDING
+    | typeof DIPHTHONG_HOMOGENEOUS;
   syllable: string;
 }
-const TRIPTONGO = "Triptongo";
+const TRIPHTHONG = "Triptongo";
 
-export interface Triptongo {
-  type: typeof TRIPTONGO;
+// Triptongo
+export interface Triphthong {
+  type: typeof TRIPHTHONG;
   syllable: string;
 }
+
+export type PHONOLOGY_TYPE =
+  | typeof HIATO_SIMPLE_TYPE_1
+  | typeof HIATO_SIMPLE_TYPE_2
+  | typeof HIATO_ACENTUAL
+  | typeof DIPHTHONG_CRESCENT
+  | typeof DIPHTHONG_DESCENDING
+  | typeof DIPHTHONG_HOMOGENEOUS
+  | typeof TRIPHTHONG;
 
 // Aguda
 export const ACUTE = "AGUDA";
@@ -57,7 +70,7 @@ export const OVERPROSED = "Sobresdrújula";
 interface Syllable {
   idx: number;
   text: string;
-  phonology: Hiato | Diptongo | Triptongo | null;
+  phonology: Hiato | Diphthong | Triphthong | null;
 }
 
 export interface WordSyllables {
@@ -138,8 +151,8 @@ function posicionSilabas(silaba: WordSyllables) {
   for (let actPos = 0; actPos < silaba.word.length;) {
     const start = actPos;
     // Las sílabas constan de tres partes: ataque, núcleo y coda
-    actPos = ataque(silaba, silaba.word, actPos);
-    actPos = nucleo(silaba, silaba.word, actPos);
+    actPos = onset(silaba, silaba.word, actPos);
+    actPos = nucleus(silaba, silaba.word, actPos);
     actPos = coda(silaba, silaba.word, actPos);
 
     // Guarda sílaba de la palabra
@@ -181,7 +194,7 @@ function posicionSilabas(silaba: WordSyllables) {
  *
  * @returns {int}
  */
-function ataque(silaba: WordSyllables, pal: string, pos: number): number {
+function onset(silaba: WordSyllables, pal: string, pos: number): number {
   // Se considera que todas las consonantes iniciales forman parte del ataque
   var ultimaConsonante = "a";
 
@@ -226,7 +239,7 @@ function ataque(silaba: WordSyllables, pal: string, pos: number): number {
  * @param {int} pos
  * @returns {int}
  */
-function nucleo(silaba: WordSyllables, pal: string, pos: number): number {
+function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
   // Sirve para saber el tipo de vocal anterior cuando hay dos seguidas
   let anterior = 0;
   let c;
@@ -663,11 +676,18 @@ function find_diptongo(silaba: WordSyllables) {
       continue;
     }
 
+    // if is enough but i would like to included it in the regex...
+    if (
+      syllable.text.indexOf("que") !== -1 || syllable.text.indexOf("qui") !== -1
+    ) {
+      continue;
+    }
+
     // Diptongo Creciente (VD - VF) = ((i|u)(a|e|o))
     const m2 = syllable.text.match(/((i|u)(a|e|o))/g);
     if (m2 != null) {
       syllable.phonology = {
-        type: DIPTONGO_CREDIENTE,
+        type: DIPHTHONG_CRESCENT,
         syllable: m2[0],
       };
       continue;
@@ -677,7 +697,7 @@ function find_diptongo(silaba: WordSyllables) {
     const m3 = syllable.text.match(/((a|e|o)(i|u))/g);
     if (m3 != null) {
       syllable.phonology = {
-        type: DIPTONGO_DECREDIENTE,
+        type: DIPHTHONG_DESCENDING,
         syllable: m3[0],
       };
       continue;
@@ -687,7 +707,7 @@ function find_diptongo(silaba: WordSyllables) {
     const m4 = syllable.text.match(/((i|u)(i|u))/g);
     if (m4 != null) {
       syllable.phonology = {
-        type: DIPTONGO_HOMOGENEO,
+        type: DIPHTHONG_HOMOGENEOUS,
         syllable: m4[0],
       };
     }
@@ -709,7 +729,7 @@ function find_triptongo(silaba: WordSyllables) {
     const m = regex.exec(remove_diaeresis(remove_accents(syllable.text))); // fix: iéi
     if (m != null) {
       syllable.phonology = {
-        type: TRIPTONGO,
+        type: TRIPHTHONG,
         syllable: syllable.text.substring(m.index, m.index + m[0].length),
       };
       continue;
