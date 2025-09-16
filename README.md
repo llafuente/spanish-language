@@ -9,7 +9,7 @@ Entre las utilidades que se encuentran en el proyecto.
 * Plurales:
   * *TODO* is_plural: para saber si una palabra es plural o no
   * plural/get_plural: devuelve el plural de una palabra.
-* palabra
+* Palabra
   * syllabify/syllabify: silabea una palabra.
     * silabas de la palabra: ataque, nucleo, coda (incluido hiato, diptongo, triptongo y sus tipos)
     * silaba tónica
@@ -17,8 +17,13 @@ Entre las utilidades que se encuentran en el proyecto.
     * tipo de acenturación
 * Género
   * *TODO* genre/get_genre: determina el género de la palabra enviada.
-* verbs
+* Verbos
   * *TODO* verbs
+* Fonética
+  * phonetic/to_ipa: Dado un texto lo transforma al Alfabeto Fonético Internacional (AFI, o IPA en inglés)
+* Morfología
+  * morphology/get_sufixes: Localiza los sufijos de una palabra
+  * morphology/get_prefixes: Localiza los prefijos de una palabra
 
 Así mismo poder analizar morfológicamente / sintácticamente una frase.
 
