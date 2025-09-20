@@ -1,0 +1,3718 @@
+[
+  {
+    "text": "En",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "un",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "lugar",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "Mancha",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cuyo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "nombre",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "no",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "quiero",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "acordarme",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "no",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "ha",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "mucho",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tiempo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "vivía",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "un",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hidalgo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "lanza",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "en",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "astillero",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "adarga",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "antigua",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "rocín",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "flaco",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "galgo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "corredor",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "Una",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "olla",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "algo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "más",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "vaca",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "carnero",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "salpicón",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "las",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "más",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "noches",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "duelos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "quebrantos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "sábados",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "lantejas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "viernes",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "algún",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "palomino",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "añadidura",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "domingos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "consumían",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "las",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tres",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "partes",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "su",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hacienda",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "El",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "resto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "della",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "concluían",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "sayo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "velarte",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "calzas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "velludo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "para",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "las",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "fiestas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "con",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "sus",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "pantuflos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "lo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "mesmo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "días",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "entresemana",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "se",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "honraba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "con",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "su",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "vellorí",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "lo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "más",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "fino",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "Tenía",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "en",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "su",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "casa",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "una",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "ama",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "pasaba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cuarenta",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "una",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "sobrina",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "no",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "llegaba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "a",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "veinte",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "un",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "mozo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "campo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "plaza",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "así",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "ensillaba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "el",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "rocín",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "como",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tomaba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "podadera",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "Frisaba",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "edad",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "nuestro",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hidalgo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "con",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cincuenta",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "años",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "Era",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "complexión",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "recia",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "seco",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "carnes",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "enjuto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "rostro",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "gran",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "madrugador",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "amigo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "caza",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "Quieren",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "decir",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tenía",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "el",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "sobrenombre",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": "«",
+    "type": "punctuation"
+  },
+  {
+    "text": "Quijada",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": "»",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "o",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": "«",
+    "type": "punctuation"
+  },
+  {
+    "text": "Quesada",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": "»",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "en",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "esto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hay",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "alguna",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "diferencia",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "en",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "autores",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "deste",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "caso",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "escriben",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "aunque",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "por",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "conjeturas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "verisímilesII",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "se",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "deja",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "entender",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "se",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "llamaba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": "«",
+    "type": "punctuation"
+  },
+  {
+    "text": "Quijana",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": "»",
+    "type": "punctuation"
+  },
+  {
+    "text": "III",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "Pero",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "esto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "importa",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "poco",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "a",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "nuestro",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cuento",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ":",
+    "type": "punctuation"
+  },
+  {
+    "text": "basta",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "en",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "narración",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "dél",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "no",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "se",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "salga",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "un",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "punto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "verdad",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "\r\n\r\nEs",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "pues",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "saber",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "este",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "sobredicho",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hidalgo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "ratos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "estaba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "ocioso",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": "—",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "eran",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "más",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "del",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "año",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": "—",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "se",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "daba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "a",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "leer",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "libros",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "caballerías",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "con",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tanta",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "afición",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "gusto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "olvidó",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "casi",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "todo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "punto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "el",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "ejercicio",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "caza",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "aun",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "administración",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "su",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hacienda",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ";",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "llegó",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "a",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tanto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "su",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "curiosidad",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "desatino",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "en",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "esto",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "vendió",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "muchas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hanegas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tierra",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "sembradura",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "para",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "comprar",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "libros",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "caballerías",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "en",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "queIV",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "leer",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "así",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "llevó",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "a",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "su",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "casa",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "todos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cuantos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "pudo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "haber",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "dellos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ";",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "todos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "ningunos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "le",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "parecían",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tan",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "bienV",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "como",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "los",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "compuso",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "el",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "famoso",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "Feliciano",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "Silva",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "porque",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "claridad",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "su",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "prosa",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "aquellas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "entricadas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "razones",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "suyas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "le",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "parecían",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "perlas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "más",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cuando",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "llegaba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "a",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "leer",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "aquellos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "requiebros",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cartas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "desafíos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "donde",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "en",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "muchas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "partes",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hallaba",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "escrito",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ":",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": "«",
+    "type": "punctuation"
+  },
+  {
+    "text": "La",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "razón",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "sinrazón",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "a",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "mi",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "razón",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "se",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hace",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "tal",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "manera",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "mi",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "razón",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "enflaquece",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ",",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "con",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "razón",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "me",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "quejo",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "vuestra",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "fermosura",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": "»",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": ".",
+    "type": "punctuation"
+  },
+  {
+    "text": "Y",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "también",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cuando",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "leía",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": ":",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": "«",
+    "type": "punctuation"
+  },
+  {
+    "text": "Los",
+    "sentenceStart": true,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "altos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "cielos",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "de",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "vuestra",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "divinidad",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "divinamente",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "con",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "las",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "estrellas",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "os",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "fortifican",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "y",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "os",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "hacen",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "merecedora",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "del",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "merecimiento",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "que",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "merece",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "la",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "vuestra",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": " ",
+    "type": "punctuation"
+  },
+  {
+    "text": "grandeza",
+    "sentenceStart": false,
+    "type": "text"
+  },
+  {
+    "punctuation": "…",
+    "type": "punctuation"
+  },
+  {
+    "punctuation": "»",
+    "type": "punctuation"
+  }
+]
