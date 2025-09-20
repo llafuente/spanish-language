@@ -1,18 +1,3 @@
-// https://www.spanphon.jvcasillas.com/slides/02_silaba_diptongos_hiatos/index.html#63
-// https://es.wikipedia.org/wiki/Transcripci%C3%B3n_fon%C3%A9tica_del_espa%C3%B1ol_con_el_Alfabeto_Fon%C3%A9tico_Internacional
-// https://www.rae.es/dpd/ayuda/representacion-de-sonidos
-// https://www.cambridge.org/core/services/aop-cambridge-core/content/view/39B1C556856D62AF8FC53D3F22435750/S0025100303001373a.pdf/castilian_spanish.pdf
-// https://api.pageplace.de/preview/DT0400.9781107595446_A23761744/preview-9781107595446_A23761744.pdf
-
-// utils
-
-// text to ipa
-// https://translatormind.com/translator-tool/spanish-ipa-translator/
-
-// ipa to speech
-// miss some letters mr google-amazon!
-// https://www.capyschool.com/en/reader
-
 import {
   DIPHTHONG_CRESCENT,
   DIPHTHONG_DESCENDING,
@@ -87,8 +72,9 @@ interface Replacement {
   replace: string;
   atIndex: number;
   previousLetter: null | string;
-  phonologyType?: PHONOLOGY_TYPE,
-  once?: boolean
+  phonologyType?: PHONOLOGY_TYPE;
+  once?: boolean;
+  round: number;
 }
 
 interface Dialect {
@@ -98,7 +84,7 @@ interface Dialect {
   firstOf: Replacement[][];
 }
 
-const SPANISH_BASE: Dialect = {
+const SPANISH_STANDARD: Dialect = {
   allOf: [
     //  ch
     {
@@ -107,6 +93,7 @@ const SPANISH_BASE: Dialect = {
       replace: "ʧ",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     // h
     {
@@ -115,6 +102,7 @@ const SPANISH_BASE: Dialect = {
       replace: "",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     // 'j': 'x',
 
@@ -125,6 +113,7 @@ const SPANISH_BASE: Dialect = {
       replace: "ð",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "z-in-middle",
@@ -132,6 +121,7 @@ const SPANISH_BASE: Dialect = {
       replace: "θ",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "ce-ci",
@@ -139,6 +129,7 @@ const SPANISH_BASE: Dialect = {
       replace: "θ$1",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "c",
@@ -146,13 +137,23 @@ const SPANISH_BASE: Dialect = {
       replace: "k",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
-      id: "que-qui",
-      search: /qu([ei])/,
-      replace: "k$1",
+      id: "que",
+      search: /que/,
+      replace: "ke",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
+    },
+    {
+      id: "qui",
+      search: /qui/,
+      replace: "kj", // quien -> ji
+      atIndex: -1,
+      previousLetter: null,
+      round: 0,
     },
     // ñ
     {
@@ -161,43 +162,7 @@ const SPANISH_BASE: Dialect = {
       replace: "ɲ",
       atIndex: -1,
       previousLetter: null,
-    },
-    // rr digraph
-    {
-      id: "rr",
-      search: /rr/,
-      replace: "ɾ̄",
-      atIndex: -1,
-      previousLetter: null,
-    },
-    {
-      id: "r-after-n",
-      search: /^r/,
-      replace: "ɾ̄", // spain
-      atIndex: -1,
-      previousLetter: "n",
-    },
-    {
-      id: "r-after-l",
-      search: /^r/,
-      replace: "ɾ̄", // spain
-      atIndex: -1,
-      previousLetter: "l",
-    },
-    {
-      id: "r-after-s",
-      search: /^r/,
-      replace: "ɾ̄", // spain
-      atIndex: -1,
-      previousLetter: "s",
-    },
-    // r - at start
-    {
-      id: "r-at-start",
-      search: /r([aeoiuy])/,
-      replace: "ɾ̄$1", // spain
-      atIndex: 0,
-      previousLetter: null,
+      round: 0,
     },
     // r - single r
     {
@@ -206,6 +171,49 @@ const SPANISH_BASE: Dialect = {
       replace: "ɾ", // spain
       atIndex: -1,
       previousLetter: null,
+      round: 0,
+    },
+    // (ɾɾ) rr digraph
+    {
+      id: "rr",
+      search: /ɾɾ/,
+      replace: "r", // "ɾ̄",
+      atIndex: -1,
+      previousLetter: null,
+      round: 0,
+    },
+    {
+      id: "r-after-n",
+      search: /^ɾ/,
+      replace: "r", // spain
+      atIndex: -1,
+      previousLetter: "n",
+      round: 0,
+    },
+    {
+      id: "r-after-l",
+      search: /^ɾ/,
+      replace: "r", // spain
+      atIndex: -1,
+      previousLetter: "l",
+      round: 0,
+    },
+    {
+      id: "r-after-s",
+      search: /^ɾ/,
+      replace: "r", // spain
+      atIndex: -1,
+      previousLetter: "s",
+      round: 0,
+    },
+    // r - at start
+    {
+      id: "r-at-start",
+      search: /ɾ([aeoiuy])/,
+      replace: "r$1", // spain
+      atIndex: 0,
+      previousLetter: null,
+      round: 0,
     },
 
     // y as last letter
@@ -215,6 +223,7 @@ const SPANISH_BASE: Dialect = {
       replace: "i", // spain
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
 
     // b at start
@@ -225,6 +234,7 @@ const SPANISH_BASE: Dialect = {
       replace: "β",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "v-in-middle",
@@ -232,6 +242,7 @@ const SPANISH_BASE: Dialect = {
       replace: "β",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "bv-at-start",
@@ -239,6 +250,7 @@ const SPANISH_BASE: Dialect = {
       replace: "b",
       atIndex: 0,
       previousLetter: null,
+      round: 0,
     },
 
     // https://api.pageplace.de/preview/DT0400.9781107595446_A23761744/preview-9781107595446_A23761744.pdf
@@ -246,7 +258,7 @@ const SPANISH_BASE: Dialect = {
     // d después de pausa, /l/ y /n/
     // ð en los demás contextos
 
-/*
+    /*
   // d
   {
     id: "d-relaxed",
@@ -255,7 +267,7 @@ const SPANISH_BASE: Dialect = {
     atIndex: -1,
     previousLetter: null,
   },
-*/
+    */
 
     // ll, y
     {
@@ -264,6 +276,7 @@ const SPANISH_BASE: Dialect = {
       replace: "ʝ",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "ll",
@@ -271,8 +284,8 @@ const SPANISH_BASE: Dialect = {
       replace: "ʝ",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
-
   ],
   firstOf: [[
     // j / g / gu
@@ -282,6 +295,7 @@ const SPANISH_BASE: Dialect = {
       replace: "gu$1",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "w",
@@ -289,6 +303,7 @@ const SPANISH_BASE: Dialect = {
       replace: "gu",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "gue-gui",
@@ -296,6 +311,7 @@ const SPANISH_BASE: Dialect = {
       replace: "g$1",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "j",
@@ -303,6 +319,7 @@ const SPANISH_BASE: Dialect = {
       replace: "x", // χ spain
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "ge-gi",
@@ -310,6 +327,7 @@ const SPANISH_BASE: Dialect = {
       replace: "x$1",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
     {
       id: "g",
@@ -317,189 +335,138 @@ const SPANISH_BASE: Dialect = {
       replace: "ɣ",
       atIndex: -1,
       previousLetter: null,
+      round: 0,
     },
-  ],[
+  ], [
     // diphthongs
     {
       id: "ia-diphthong",
       search: /ia/,
-      replace: "i̯a", // ja
+      replace: "ja", // "i̯a"
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_CRESCENT,
       once: true,
-    },
-
-    {
-      id: "ia-diphthong",
-      search: /ia/,
-      replace: "i̯a", // ja
-      atIndex: -1,
-      previousLetter: null,
-      phonologyType: DIPHTHONG_CRESCENT,
-      once: true,
+      round: 1,
     },
     {
       id: "ie-diphthong",
       search: /ie/,
-      replace: "i̯e", // je
+      replace: "je", // "i̯e"
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_CRESCENT,
       once: true,
+      round: 1,
     },
     {
       id: "io-diphthong",
       search: /io/,
-      replace: "i̯o", // jo
+      replace: "jo", // "i̯o",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_CRESCENT,
       once: true,
+      round: 1,
     },
     {
       id: "ue-diphthong",
       search: /ue/,
-      replace: "u̯e",
+      replace: "we", // "u̯e",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_CRESCENT,
       once: true,
+      round: 1,
     },
     {
       id: "ua-diphthong",
       search: /ua/,
-      replace: "u̯a",
+      replace: "wa", // "u̯a",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_CRESCENT,
       once: true,
+      round: 1,
     },
     {
       id: "uo-diphthong",
       search: /uo/,
-      replace: "u̯o",
+      replace: "wo", // "u̯o",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_CRESCENT,
       once: true,
+      round: 1,
     },
 
     // diptongos decrecientes
     {
-      id: "ei-diphthong",
-      search: /ei/,
-      replace: "ei̯",
+      id: "ei-ey-diphthong",
+      search: /(ei|ey)/,
+      replace: "ej", // "ei̯",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_DESCENDING,
       once: true,
+      round: 1,
     },
     {
-      id: "ey-diphthong",
-      search: /ey/,
-      replace: "ei̯",
+      id: "ai-ay-diphthong",
+      search: /(ai|ay)/,
+      replace: "aj", // "ai̯",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_DESCENDING,
       once: true,
+      round: 1,
     },
     {
-      id: "ai-diphthong",
-      search: /ai/,
-      replace: "ai̯",
+      id: "oi-oy-diphthong",
+      search: /(oi|oy)/,
+      replace: "oj", // "oi̯",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_DESCENDING,
       once: true,
+      round: 1,
     },
     {
-      id: "ay-diphthong",
-      search: /ay/,
-      replace: "ai̯",
+      id: "eu-au-ou-diphthong",
+      search: /(e|a|o)u/,
+      replace: "$1w", //  "$1u̯",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_DESCENDING,
       once: true,
-    },
-    {
-      id: "oi-diphthong",
-      search: /oi/,
-      replace: "oi̯",
-      atIndex: -1,
-      previousLetter: null,
-      phonologyType: DIPHTHONG_DESCENDING,
-      once: true,
-    },
-    {
-      id: "oy-diphthong",
-      search: /oy/,
-      replace: "oi̯",
-      atIndex: -1,
-      previousLetter: null,
-      phonologyType: DIPHTHONG_DESCENDING,
-      once: true,
-    },
-    {
-      id: "eu-diphthong",
-      search: /eu/,
-      replace: "eu̯",
-      atIndex: -1,
-      previousLetter: null,
-      phonologyType: DIPHTHONG_DESCENDING,
-      once: true,
-    },
-    {
-      id: "au-diphthong",
-      search: /au/,
-      replace: "au̯",
-      atIndex: -1,
-      previousLetter: null,
-      phonologyType: DIPHTHONG_DESCENDING,
-      once: true,
-    },
-    {
-      id: "ou-diphthong",
-      search: /ou/,
-      replace: "ou̯",
-      atIndex: -1,
-      previousLetter: null,
-      phonologyType: DIPHTHONG_DESCENDING,
-      once: true,
+      round: 1,
     },
     // diptongos acrecientes
     {
       id: "iu-diphthong",
       search: /iu/,
-      replace: "i̯u", // ju
+      replace: "ju", // "i̯u",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_HOMOGENEOUS,
       once: true,
+      round: 1,
     },
     {
       id: "ui-diphthong",
-      search: /ui/,
-      replace: "u̯i", // wi
+      search: /(ui|uy)/,
+      replace: "wi", //  "u̯i",
       atIndex: -1,
       previousLetter: null,
       phonologyType: DIPHTHONG_HOMOGENEOUS,
       once: true,
-    },
-    {
-      id: "uy-diphthong",
-      search: /uy/,
-      replace: "ui̯",
-      atIndex: -1,
-      previousLetter: null,
-      phonologyType: DIPHTHONG_HOMOGENEOUS,
-      once: true,
+      round: 1,
     },
   ]],
 };
 
 const SPANISH = {
-  "es-ES": SPANISH_BASE,
+  "es-ES": SPANISH_STANDARD,
 };
 
 function apply_replacement(
@@ -509,6 +476,7 @@ function apply_replacement(
   let done = false;
   let m;
   do {
+    // console.log(text, replacement.search);
     m = text.match(replacement.search);
     if (m != null && m.input) {
       // console.debug(m, replacement);
@@ -519,7 +487,7 @@ function apply_replacement(
       // console.debug("modified: ", text);
       done = true;
       if (replacement.once) {
-        break
+        break;
       }
     }
   } while (m != null);
@@ -527,10 +495,35 @@ function apply_replacement(
   return [text, done];
 }
 
+// TODO
+// zheísmo: ll -> [ʒ] o [dʒ]
+// sheísmo: ll -> ʃ
+// ceceo c -> c
+// seseo c -> s
+
+// yeismo zheísmo
+// ceceo seseo
+// Rehilamiento 
+const TARGETS = {
+  // españa
+  "es-ES": ["yeismo", "ceceo"],
+  // argentina
+  "es-AR": ["yeismo", "seseo"],
+  // https://es.wikipedia.org/wiki/Espa%C3%B1ol_rioplatense
+  // argentina 2 - voseo - elisión
+  // La aspiración de la sibilante ([s]) medial. erre asibilada [ʐ] (escrita ‹r› en posición inicial, ‹rr› entre vocales), que en la emisión se percibe como una suerte de silbido.
+  "rioplatense": ["zheísmo", "seseo"],
+  // uruguay
+  "es-UY": [],
+
+}
+
 export function to_ipa(
   sentence: string,
   options: { target: string } = { target: "es-ES" },
 ): string {
+  // console.log(`\n${sentence}\n`);
+
   const syllables = syllabify(sentence);
   // console.debug(syllables);
 
@@ -540,6 +533,7 @@ export function to_ipa(
   let lastLetter: string | null = null;
   for (let i = 0; i < syllables.syllables.length; ++i) {
     const syllable = syllables.syllables[i];
+    // console.log(syllable)
 
     let t = syllable.text;
     t = remove_accents(t);
@@ -547,10 +541,10 @@ export function to_ipa(
     // x, replacement need to operate over the previous text, so do it manually without a regex
     // and before "stress"
     const c = t.indexOf("x");
-    // console.debug("x!", c, i);
+    // console.debug("  x!", c, i);
     if (c == 0) {
       if (i > 0) {
-        // console.debug("???", ipa)
+        // console.debug("  ???", ipa)
         ipa[ipa.length - 2] += "k";
         t = t.replace(/x/, "s");
       } else {
@@ -564,35 +558,46 @@ export function to_ipa(
       ipa.push("ˈ");
     }
 
-    for (let j = 0; j < dialect.firstOf.length; ++j) {
-      const group = dialect.firstOf[j];
-      for (let z = 0; z < group.length; ++z) {
-        const r = group[z];
-
-        const appyRule = (r.atIndex === i || r.atIndex === -1) &&
+    for(let round = 0; round < 2; ++round) {
+      // console.log(`  round ${round}`)
+      for (let j = 0; j < dialect.firstOf.length; ++j) {
+        const group = dialect.firstOf[j];
+        for (let z = 0; z < group.length; ++z) {
+          const r = group[z];
+          
+          const appyRule = r.round == round && (r.atIndex === i || r.atIndex === -1) &&
           (r.previousLetter === lastLetter || r.previousLetter === null) &&
           (!r.phonologyType || r.phonologyType === syllable.phonology?.type);
-        if (appyRule) {
-          let done;
-          [t, done] = apply_replacement(t, r);
-          if (done) {
-            // console.log("exclusive break!");
-            break;
+          
+          // console.log(`  rule[${r.id}] ${i} ${r.previousLetter} ${appyRule}`)
+
+          if (appyRule) {
+            let done;
+            [t, done] = apply_replacement(t, r);
+            if (done) {
+              // console.log("  exclusive break!");
+              break;
+            }
           }
         }
       }
-    }
-
-    for (let j = 0; j < dialect.allOf.length; ++j) {
-      const r = dialect.allOf[j];
-        const appyRule = (r.atIndex === i || r.atIndex === -1) &&
+  
+      for (let j = 0; j < dialect.allOf.length; ++j) {
+        const r = dialect.allOf[j];
+        const appyRule = r.round == round && (r.atIndex === i || r.atIndex === -1) &&
           (r.previousLetter === lastLetter || r.previousLetter === null) &&
           (!r.phonologyType || r.phonologyType === syllable.phonology?.type);
-      if (appyRule) {
-        let done;
-        [t, done] = apply_replacement(t, r);
+
+        // console.log(`  rule[${r.id}] ${i} ${lastLetter} ${appyRule}`)
+
+        if (appyRule) {
+          let done;
+          [t, done] = apply_replacement(t, r);
+        }
       }
+
     }
+
 
     ipa.push(t);
     lastLetter = t[t.length - 1];

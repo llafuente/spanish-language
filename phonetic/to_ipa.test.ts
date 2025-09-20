@@ -18,7 +18,7 @@ Deno.test("get_ipa", () => {
   assertEquals(to_ipa(`pujó`), `pu.ˈxo`);
 
 
-assertEquals(to_ipa(`piel`), `ˈpi̯el`)
+assertEquals(to_ipa(`piel`), `ˈpjel`)
 
 assertEquals(to_ipa(`área`), `ˈa.ɾe.a`)
 assertEquals(to_ipa(`héroe`), `ˈe.ɾo.e`)
@@ -29,7 +29,7 @@ assertEquals(to_ipa(`paje`), `ˈpa.xe`)
 assertEquals(to_ipa(`jinete`), `xi.ˈne.te`)
 assertEquals(to_ipa(`jirafa`), `xi.ˈɾa.fa`)
 
-assertEquals(to_ipa(`genial`), `xe.ˈni̯al`)
+assertEquals(to_ipa(`genial`), `xe.ˈnjal`)
 assertEquals(to_ipa(`girar`), `xi.ˈɾaɾ`)
 assertEquals(to_ipa(`página`), `ˈpa.xi.na`)
 
@@ -46,28 +46,29 @@ assertEquals(to_ipa(`cuna`), `ˈku.na`)
 assertEquals(to_ipa(`kilo`), `ˈki.lo`)  
 
 // g
-assertEquals(to_ipa(`guerra`), `ˈge.ɾ̄a`)
+assertEquals(to_ipa(`guerra`), `ˈge.ra`)
 assertEquals(to_ipa(`guiso`), `ˈgi.so`)
-assertEquals(to_ipa(`garra`), `ˈɣa.ɾ̄a`)
-assertEquals(to_ipa(`gorra`), `ˈɣo.ɾ̄a`)
+assertEquals(to_ipa(`garra`), `ˈɣa.ra`)
+assertEquals(to_ipa(`gorra`), `ˈɣo.ra`)
 assertEquals(to_ipa(`gusano`), `ɣu.ˈsa.no`)
 
 // TODO review stress
 assertEquals(to_ipa(`agüita`), `a.ˈgui.ta`)
-assertEquals(to_ipa(`halagüeño`), `a.la.ˈgue.ɲo`)
+assertEquals(to_ipa(`halagüeño`), `a.la.ˈgue.ɲo`) // [a.laˈɣ̞we.ɲo]
 
 assertEquals(to_ipa(`güiski`), `ˈguis.ki`)
 assertEquals(to_ipa(`wisky`), `ˈguis.ki`)
 
 // r
 
-assertEquals(to_ipa(`enredo`), `en.ˈɾ̄e.do`)
-assertEquals(to_ipa(`alrededor`), `al.ɾ̄e.de.ˈdoɾ`)
-assertEquals(to_ipa(`israelita`), `is.ɾ̄a.e.ˈli.ta`)
+assertEquals(to_ipa(`enredo`), `en.ˈre.do`)
+assertEquals(to_ipa(`alrededor`), `al.re.de.ˈdoɾ`)
+assertEquals(to_ipa(`israelita`), `is.ra.e.ˈli.ta`)
 
-assertEquals(to_ipa(`rey`), `ˈɾ̄ei`)
-assertEquals(to_ipa(`reina`), `ˈɾ̄ei̯.na`)
+assertEquals(to_ipa(`rey`), `ˈrei`)
+assertEquals(to_ipa(`reina`), `ˈrej.na`)
 assertEquals(to_ipa(`pero`), `ˈpe.ɾo`)
+assertEquals(to_ipa(`perro`), `ˈpe.ro`)
 
 // b
 assertEquals(to_ipa(`beso`), `ˈbe.so`)
@@ -78,16 +79,23 @@ assertEquals(to_ipa(`vaso`), `ˈba.so`)
 assertEquals(to_ipa(`yeso`), `ˈʝe.so`)
 assertEquals(to_ipa(`haya`), `ˈa.ʝa`)
 assertEquals(to_ipa(`llega`), `ˈʝe.ɣa`)
+/*
+yeísta (AFI)  [ˈʝe.ɣ̞a]
+no yeísta (AFI) [ˈʎe.ɣ̞a]
+sheísta (AFI) [ˈʃe.ɣ̞a]
+zheísta (AFI) [ˈʒe.ɣ̞a]
+*/
 assertEquals(to_ipa(`halla`), `ˈa.ʝa`)
 
 // θ
 
 assertEquals(to_ipa(`zapato`), `θa.ˈpa.to`)
-assertEquals(to_ipa(`cien`), `ˈθi̯en`)
+assertEquals(to_ipa(`quien`), `ˈkjen`)
+assertEquals(to_ipa(`cien`), `ˈθjen`)
 assertEquals(to_ipa(`cebo`), `ˈθe.βo`)
-assertEquals(to_ipa(`bien`), `ˈbi̯en`)
+assertEquals(to_ipa(`bien`), `ˈbjen`)
 
-assertEquals(to_ipa(`sien`), `ˈsi̯en`)
+assertEquals(to_ipa(`sien`), `ˈsjen`)
 
 assertEquals(to_ipa(`encima`), `en.ˈθi.ma`)
 assertEquals(to_ipa(`enzima`), `en.ˈθi.ma`)
@@ -103,7 +111,7 @@ assertEquals(to_ipa(`escena`), `es.ˈθe.na`)
 assertEquals(to_ipa(`taxi`), `ˈtak.si`)
 
 assertEquals(to_ipa(`experto`), `eks.ˈpeɾ.to`)
-assertEquals(to_ipa(`auxilio`), `au̯k.ˈsi.li̯o`)
+assertEquals(to_ipa(`auxilio`), `awk.ˈsi.ljo`) // awˈksi.ljo
 
 
 // assertEquals(get_ipa(`peine`, {target: "latin"}), `/ˈpejne/`)
@@ -168,7 +176,30 @@ a.ˈmoɾ̝ (andino alto, chileno)
 a.ˈmohɾ (caribeño)
 */
 
+assertEquals(to_ipa(`cazar`), `ka.ˈθaɾ`)
+
 // dézðe
 assertEquals(to_ipa(`desde`), `ˈdes.de`)
+
+assertEquals(to_ipa(`crie`), `ˈkrje`)
+assertEquals(to_ipa(`crié`), `ˈkrie`)
+
+//assertEquals(to_ipa(`pronunciación`), `pɾo.nun̟.sjaˈsjon`) // colombia-seseante
+//assertEquals(to_ipa(`pronunciación`), `pɾo.nun̟.θjaˈθjon`) // no-seseante
+assertEquals(to_ipa(`pronunciación`), `pro.nun.θja.ˈθion`) // no-seseante
+
+
+
+// rioplatense
+// aspiracion s final casco: [kahko]
+// sinalefa: Las Heras [la'seras]
+// elisión /r/ final en los infinitivos verbales
+// elisión /s/ final en la mayor parte de las palabras.
+// fusionan / ɲ / en / nj /, lo que hace que huraño que es similar en definición a "insociable" y uranio "uranio" se pronuncian igual.
+// [n] se realiza alveolar y no velar como en otras variedades de las tierras bajas.
+// ?? La eliminación de las vocales en los diptongos produce una entonación mucho más pronunciada y rítmica.
+// La aspiración de /s/, junto con la pérdida de /r/ final produce una notable simplificación de la estructura de la sílaba, lo que le da al habla informal rioplatense un ritmo fluido y distintivo de consonante-vocal-consonante-vocal:
+// Si querés irte, andate [si keˈɾe ˈite ãnˈdate]
+// Yo no te voy a parar [ˈʃo no te ˈβoj a paˈɾa]
 
 });
