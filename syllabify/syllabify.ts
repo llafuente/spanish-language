@@ -1,15 +1,6 @@
 // based on https://github.com/nicofrem/silabajs/blob/c3f747bda7b32aa0e814fc0e41f59b8fbfe1a986/silabajs.js#L125
 // but this version has many fixes and it's tested
 
-// another interesting source
-// https://github.com/dimkir/cyrillizer/blob/407d22b495bdbadd067361a5a408acf0f739c9df/doc/SeparadorDeSilabas.cs#L9
-
-// http://elies.rediris.es/elies4/Fon2.htm
-// utils
-// https://www.diptongos.net/glosario
-
-// https://en.wikipedia.org/wiki/Spanish_phonology#Syllable_structure
-
 import {
   is_closed_vowel,
   is_open_vowel,
