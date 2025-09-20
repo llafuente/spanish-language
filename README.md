@@ -8,7 +8,7 @@ Entre las utilidades que se encuentran en el proyecto.
   * *TODO* dictionary/get_definition: Devuelve una entrada del diccionario o una redireccion a otra entrada.
 * Plurales:
   * *TODO* is_plural: para saber si una palabra es plural o no
-  * plural/get_plural: devuelve el plural de una palabra.
+  * plural/to_plural: devuelve el plural de una palabra.
 * Palabra
   * syllabify/syllabify: silabea una palabra.
     * silabas de la palabra: ataque, nucleo, coda (incluido hiato, diptongo, triptongo y sus tipos)

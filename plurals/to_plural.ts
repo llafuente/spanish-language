@@ -1,5 +1,3 @@
-// https://www.rae.es/dpd/plural
-
 import {is_vowel, is_consonant, remove_accents} from "../letter.ts";
 import {ACUTE, syllabify} from "../syllabify/syllabify.ts";
 
@@ -32,7 +30,7 @@ const exceptions = {
   "carácter": ["caracteres"],
 };
 
-export function get_plural(str: string): string[] {
+export function to_plural(str: string): string[] {
   // console.log(str);
 
   const low = str.toLowerCase();
