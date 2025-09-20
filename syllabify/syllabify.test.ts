@@ -1,5 +1,5 @@
 import { expect } from "jsr:@std/expect";
-import { assertEquals } from "jsr:@std/assert";
+import { assertEquals, assertThrows } from "jsr:@std/assert";
 import {
   ACUTE,
   HIATO_ACENTUAL,
@@ -560,6 +560,107 @@ const t: WordSyllables[] = [
     accentedLetterIdx: -1,
     accentuation: "GRAVE",
   },
+  {
+    word: "habladuría",
+    syllables: [
+      { idx: 0, phonology: null, text: "ha" },
+      { idx: 2, phonology: null, text: "bla" },
+      { idx: 5, phonology: null, text: "du" },
+      {
+        idx: 7,
+        phonology: { type: "Hiato acentual", syllable: "í-a" },
+        text: "rí",
+      },
+      { idx: 9, phonology: null, text: "a" },
+    ],
+    stressedSyllableIdx: 4,
+    accentedLetterIdx: 8,
+    accentuation: "GRAVE",
+  },
+  {
+    word: "jaén",
+    syllables: [
+      {
+        idx: 0,
+        phonology: { type: "Hiato acentual", syllable: "a-é" },
+        text: "ja",
+      },
+      { idx: 2, phonology: null, text: "én" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: 2,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "himno",
+    syllables: [
+      { idx: 0, phonology: null, text: "him" },
+      { idx: 3, phonology: null, text: "no" },
+    ],
+    stressedSyllableIdx: 1,
+    accentedLetterIdx: -1,
+    accentuation: "GRAVE",
+  },
+
+  // extrangerismos, just for testing purposes, don't expect english syllabify
+  {
+    word: "dirham",
+    syllables: [
+      { idx: 0, phonology: null, text: "dir" },
+      { idx: 3, phonology: null, text: "ham" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: -1,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "apartheid",
+    syllables: [
+      { idx: 0, phonology: null, text: "a" },
+      { idx: 1, phonology: null, text: "part" },
+      {
+        idx: 5,
+        phonology: { type: "Diptongo Decreciente", syllable: "ei" },
+        text: "heid",
+      },
+    ],
+    stressedSyllableIdx: 3,
+    accentedLetterIdx: -1,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "ashley",
+    syllables: [
+      { idx: 0, phonology: null, text: "as" },
+      { idx: 2, phonology: null, text: "hley" },
+    ],
+    stressedSyllableIdx: 1,
+    accentedLetterIdx: -1,
+    accentuation: "GRAVE",
+  },
+  {
+    word: "copyright",
+    syllables: [
+      { idx: 0, phonology: null, text: "cop" },
+      { idx: 3, phonology: null, text: "y" },
+      { idx: 4, phonology: null, text: "right" },
+    ],
+    stressedSyllableIdx: 3,
+    accentedLetterIdx: -1,
+    accentuation: "AGUDA",
+  },
+  {
+    word: "triptongo",
+    syllables: [
+      { idx: 0, phonology: null, text: "trip" },
+      { idx: 4, phonology: null, text: "ton" },
+      { idx: 7, phonology: null, text: "go" },
+    ],
+    stressedSyllableIdx: 2,
+    accentedLetterIdx: -1,
+
+    accentuation: "GRAVE",
+  },
 ];
 
 for (const x of t) {
@@ -569,6 +670,20 @@ for (const x of t) {
     assertEquals(result, x);
   });
 }
+
+Deno.test(`syllable errors`, () => {
+  assertThrows(() => {
+    const result = syllabify("a x c");
+  }, "a word cannot contain spaces");
+  /*
+  assertThrows(() => {
+    const result = syllabify("aeae");
+  }, "a word cannot contain spaces");
+  */
+  assertThrows(() => {
+    const result = syllabify("xsds");
+  }, "invalid word, don't have nucleus");
+});
 
 /*
 Deno.test(`syllable:`, () => {

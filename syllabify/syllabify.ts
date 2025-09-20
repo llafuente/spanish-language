@@ -240,8 +240,7 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
   // 2 = débil
 
   if (pos >= silaba.word.length) {
-    throw new Error("invalid call ?");
-    return pos; // ¡¿No tiene núcleo?!
+    throw new Error("invalid word, don't have nucleus");
   }
 
   // Se salta una 'y' al principio del núcleo, considerándola consonante
