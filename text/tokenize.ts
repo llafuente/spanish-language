@@ -65,5 +65,9 @@ export function tokenize(text: string): TextTokens[] {
     }
   }
 
+  if (acc.length) {
+    out.push({text: acc, sentenceStart, type: TOKEN_TEXT});
+  }
+
   return out;
 }
