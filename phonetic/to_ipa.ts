@@ -7,7 +7,6 @@ import {
 } from "../syllabify/syllabify.ts";
 
 import { remove_accents } from "../letter.ts";
-import { first } from "https://esm.sh/cheerio@1.0.0/dist/esm/api/traversing.d.ts";
 import { TOKEN_PUNCTUATION, TOKEN_TEXT, tokenize } from "../text/tokenize.ts";
 
 const es_to_ipa = {

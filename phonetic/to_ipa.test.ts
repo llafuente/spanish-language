@@ -210,4 +210,6 @@ Deno.test("to_ipa sentences", () => {
   // Stressed vowels
   assertEquals(to_ipa(`Si querés irte.`), `ˈsike.ˈɾesˈiɾ.te‖`);
   assertEquals(to_ipa(`Yo no te voy a parar`), `ˈʝoˈnoˈteˈboiˈapa.ˈɾaɾ`);
+  assertEquals(to_ipa(`Un ejemplo y ninguno más.`), `ˈune.ˈxem.ploˈinin.ˈɣu.noˈmas‖`);
+  
 });
