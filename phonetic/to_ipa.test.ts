@@ -1,7 +1,7 @@
 import { assertEquals, assertThrows } from "jsr:@std/assert";
 import { to_ipa } from "./to_ipa.ts";
 
-Deno.test("get_ipa", () => {
+Deno.test("to_ipa single word", () => {
 
   // Stressed vowels
   assertEquals(to_ipa(`piso`), `ˈpi.so`);
@@ -202,4 +202,12 @@ assertEquals(to_ipa(`pronunciación`), `pro.nun.θja.ˈθion`) // no-seseante
 // Si querés irte, andate [si keˈɾe ˈite ãnˈdate]
 // Yo no te voy a parar [ˈʃo no te ˈβoj a paˈɾa]
 
+});
+
+
+Deno.test("to_ipa sentences", () => {
+
+  // Stressed vowels
+  assertEquals(to_ipa(`Si querés irte.`), `ˈsike.ˈɾesˈiɾ.te‖`);
+  assertEquals(to_ipa(`Yo no te voy a parar`), `ˈʝoˈnoˈteˈboiˈapa.ˈɾaɾ`);
 });

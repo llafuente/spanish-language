@@ -8,6 +8,7 @@ import {
 
 import { remove_accents } from "../letter.ts";
 import { first } from "https://esm.sh/cheerio@1.0.0/dist/esm/api/traversing.d.ts";
+import { TOKEN_PUNCTUATION, TOKEN_TEXT, tokenize } from "../text/tokenize.ts";
 
 const es_to_ipa = {
   "([mn])[bv]": "$1b",
@@ -515,19 +516,49 @@ const TARGETS = {
   "rioplatense": ["zheísmo", "seseo"],
   // uruguay
   "es-UY": [],
-
 }
+
 
 export function to_ipa(
   sentence: string,
   options: { target: string } = { target: "es-ES" },
 ): string {
   // console.log(`\n${sentence}\n`);
+  
+  const tokens = tokenize(sentence)
 
-  const syllables = syllabify(sentence);
+  let text = ""
+  for (let i = 0; i < tokens.length; ++i) {
+    const token = tokens[i];
+    switch (token.type) {
+      case TOKEN_PUNCTUATION:
+        switch (token.punctuation) {
+          case ".":
+            text += "‖";
+            break;
+          default:
+            console.warn(`ignore punctuation: ${token.punctuation}`)
+        }
+
+        break;
+        case TOKEN_TEXT:
+          text += word_to_ipa(token.text, SPANISH_STANDARD)
+          break;
+          default:
+            throw new Error("unreacheable")
+    }
+  }
+
+  return text;
+}
+
+
+export function word_to_ipa(
+  word: string,
+  dialect: Dialect,
+): string {  
+  const syllables = syllabify(word);
   // console.debug(syllables);
-
-  const dialect: Dialect = (SPANISH as any)[options.target];
 
   const ipa: string[] = [];
   let lastLetter: string | null = null;

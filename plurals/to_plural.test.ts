@@ -1,7 +1,7 @@
 import { assertEquals, assertThrows } from "jsr:@std/assert";
 import { to_plural } from "./to_plural.ts";
 
-Deno.test("get_plural", () => {
+Deno.test("to_plural", () => {
   assertThrows(() => {
     to_plural("y");
   }, "not a name or adjetive");

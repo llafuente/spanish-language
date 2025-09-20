@@ -9,6 +9,7 @@
 * https://api.pageplace.de/preview/DT0400.9781107595446_A23761744/preview-9781107595446_A23761744.pdf
 * https://www.rae.es/sites/default/files/Principales_novedades_de_la_Ortografia_de_la_lengua_espanola.pdf
 * https://es.wiktionary.org/wiki/Wikcionario:Referencia/ES/
+* https://iris.univr.it/handle/11562/1042746
 
 # utils
 
@@ -21,3 +22,25 @@
 miss some letters mr google-amazon!
 
 * https://www.capyschool.com/en/reader
+
+# emotions
+
+list of emotions seen on various AI
+
+* Cheerful
+* Empathetic
+* Angry
+* Sad
+* Excited
+* Friendly
+* Terrified
+* Shouting
+* Unfriendly
+* Whispering
+* Hopeful
+* shy
+* relieved
+* serious
+* newcast
+* chat
+* assistant
