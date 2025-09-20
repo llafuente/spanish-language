@@ -208,8 +208,8 @@ assertEquals(to_ipa(`pronunciación`), `pro.nun.θja.ˈθion`) // no-seseante
 Deno.test("to_ipa sentences", () => {
 
   // Stressed vowels
-  assertEquals(to_ipa(`Si querés irte.`), `ˈsike.ˈɾesˈiɾ.te‖`);
-  assertEquals(to_ipa(`Yo no te voy a parar`), `ˈʝoˈnoˈteˈboiˈapa.ˈɾaɾ`);
-  assertEquals(to_ipa(`Un ejemplo y ninguno más.`), `ˈune.ˈxem.ploˈinin.ˈɣu.noˈmas‖`);
+  assertEquals(to_ipa(`Si querés irte.`), `ˈsi.ke.ˈɾes.ˈiɾ.te‖`);
+  assertEquals(to_ipa(`Yo no te voy a parar`), `ˈʝo.ˈno.ˈte.ˈboi.ˈa.pa.ˈɾaɾ`);
+  assertEquals(to_ipa(`Un ejemplo y ninguno más.`), `ˈun.e.ˈxem.plo.ˈi.nin.ˈɣu.no.ˈmas‖`);
   
 });

@@ -59,7 +59,7 @@ Texto (operaciones con texto)
     ```typescript
     import { assertEquals } from "jsr:@std/assert";
     import { to_ipa } from "./phonetic/to_ipa.ts";
-    assertEquals(to_ipa(`Un ejemplo y ninguno más.`), `ˈune.ˈxem.ploˈinin.ˈɣu.noˈmas‖`);
+    assertEquals(to_ipa(`Un ejemplo y ninguno más.`), `ˈun.e.ˈxem.plo.ˈi.nin.ˈɣu.no.ˈmas‖`);
     ```
 
 * Morfología

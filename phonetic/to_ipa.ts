@@ -535,6 +535,11 @@ export function to_ipa(
           case ".":
             text += "‖";
             break;
+          case " ":
+          case ",":
+          case ";":
+          case ":":
+            text += ".";
           default:
             console.warn(`ignore punctuation: ${token.punctuation}`)
         }
