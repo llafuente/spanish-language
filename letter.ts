@@ -35,7 +35,7 @@ export const ALPHABET = [
 const DIGRAHPS = [
   "ch",
   "ll",
-  "rr"
+  "rr",
 ];
 
 export const VOWELS_LIST = [
@@ -45,7 +45,6 @@ export const VOWELS_LIST = [
   "o",
   "u",
 ];
-
 
 export const FULL_VOWELS = [
   "a",
@@ -136,7 +135,7 @@ export function remove_diaeresis(word: string) {
         word = word.substring(0, i) + "u" + word.substring(i + 1);
         break;
       case "Ü":
-        word = word.substring(0, i) + "u" + word.substring(i + 1);
+        word = word.substring(0, i) + "U" + word.substring(i + 1);
         break;
     }
   }
@@ -182,9 +181,10 @@ export function remove_accents(word: string): string {
 }
 
 export function is_strong_vowel(c: string) {
-  if (c.length) {
+  if (c.length != 1) {
     throw new Error("only one char is allowed");
   }
+
   switch (c) {
     case "a":
     case "á":
