@@ -151,7 +151,7 @@ function get_paragraph_close_character(text: string) {
   return closeChar;
 }
 
-export function check(parts: Parragraphs[]): TextErrors[] {
+export function get_errors(parts: Parragraphs[]): TextErrors[] {
   const output: TextErrors[] = [];
 
   for (let i = 0; i < parts.length; ++i) {
@@ -405,7 +405,7 @@ export function fix_text(text: string): string {
   let MAX_ITERATIONS = 10;
   do {
     const text_parts = parse_text(text);
-    const errors = check(text_parts);
+    const errors = get_errors(text_parts);
 
     can_fix_more = false;
     for (let i = 0; i < errors.length; ++i) {

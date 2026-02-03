@@ -9,12 +9,12 @@ Entre las utilidades que se encuentran en el proyecto.
   * *TODO* is_plural: para saber si una palabra es plural o no
   * `word/plural/to_plural.ts`: devuelve el plural de una palabra.
     ```typescript
-    import { assertEquals } from "jsr:@std/assert";
-    import { to_plural } from "./word/plural/to_plural.ts";
+      import { to_plural } from "./word/plural/to_plural.ts";
 
-    assertEquals(to_plural("casa"), ["casas"]);
-    // plural can have multiples options
-    assertEquals(to_plural("bisturí"), ["bisturís", "bisturíes"]);
+      // single plural example
+      assertEquals(to_plural("casa"), ["casas"]);
+      // multiple plurals example
+      assertEquals(to_plural("bisturí"), ["bisturís", "bisturíes"]);
     ```
 
   * *TODO* plural/to_singular: devuelve el singular de una palabra
@@ -27,27 +27,22 @@ Entre las utilidades que se encuentran en el proyecto.
     *example*
 
     ```typescript
-    import {
-      syllabify,
-    } from "./word/syllabify/syllabify.ts";
-    console.log(syllabify("ciudad"));
-    ```
-
-    ```js
-    {
-      word: "ciudad",
-      syllables: [
-        {
-          idx: 0,
-          phonology: { type: "Diptongo Homogéneo", syllable: "iu" },
-          text: "ciu",
-        },
-        { idx: 3, phonology: null, text: "dad" },
-      ],
-      stressedSyllableIdx: 2,
-      accentedLetterIdx: -1,
-      accentuation: "AGUDA",
-    }
+      import { syllabify } from "./word/syllabify/syllabify.ts";
+      // syllabify a word gives detailed metadata to work
+      assertEquals(syllabify("ciudad"), {
+        word: "ciudad",
+        syllables: [
+          {
+            idx: 0,
+            phonology: { type: "Diptongo Homogéneo", syllable: "iu" },
+            text: "ciu"
+          },
+          { idx: 3, phonology: null, text: "dad" }
+        ],
+        stressedSyllableIdx: 2,
+        accentedLetterIdx: -1,
+        accentuation: "AGUDA"
+      });
     ```
 * Género
   * *TODO* genre/get_genre: determina el género de la palabra enviada.
@@ -56,9 +51,12 @@ Entre las utilidades que se encuentran en el proyecto.
 
   * `word/phonetic/to_ipa.ts`: Dado un texto lo transforma al Alfabeto Fonético Internacional (AFI) / International Phonetic Alphabet (IPA)
     ```typescript
-    import { assertEquals } from "jsr:@std/assert";
-    import { to_ipa } from "./word/phonetic/to_ipa.ts";
-    assertEquals(to_ipa(`ninguno`), `nin.ˈɣu.no`);
+      import {
+        SPANISH_STANDARD,
+        to_ipa as word_to_ipa,
+      } from "./word/phonetic/to_ipa.ts";
+      // to_ipa support custom dialecs
+      assertEquals(word_to_ipa(`ninguno`, SPANISH_STANDARD), `nin.ˈɣu.no`);
     ```
 
 Oraciones (operaciones con oraciones)
@@ -75,12 +73,28 @@ Párrafo (operaciones con párrafos)
 Texto (operaciones con texto)
   * `text/phonetic/to_ipa.ts`: Dado un texto lo transforma al Alfabeto Fonético Internacional (AFI) / International Phonetic Alphabet (IPA)
     ```typescript
-    import { assertEquals } from "jsr:@std/assert";
-    import { to_ipa } from "./text/phonetic/to_ipa.ts";
-    assertEquals(to_ipa(`Un ejemplo y ninguno más.`), `ˈun.e.ˈxem.plo.ˈi.nin.ˈɣu.no.ˈmas‖`);
+      import { to_ipa } from "./text/phonetic/to_ipa.ts";
+      // to_ipa can be used at text level.
+      assertEquals(
+        to_ipa(`Un ejemplo y ninguno más.`),
+        `ˈun.e.ˈxem.plo.ˈi.nin.ˈɣu.no.ˈmas‖`,
+      );
     ```
   * `text/tokenize.ts`: Parte un texto en tokens para ser analizado: texto y puntuación.
   * `text/text.ts`
+
+      ```typescript
+        import { parse_text, get_errors, fix_text } from "./text/text.ts";
+        // there is an error in this text
+        const text = `—Cierra la puerta. —Las palabras eran una súplica, no una orden.
+        —Cierra la puerta. —Dijo pepe.`;
+
+        const paragraphs = parse_text(text);
+        // text is fixed!, remember that not all errors can be "autofix"
+        assertEquals(fix_text(text), `—Cierra la puerta. —Las palabras eran una súplica, no una orden.
+        —Cierra la puerta. —dijo pepe.`);
+      ```
+
      * `parse_text`: Parte un texto completo en sus párrafos. Se asume que el texto es literario, un libro.
      * `to_text`: Transforma el texto parseado en un único string.
      * `get_errors`: Devuelve los errores (sintácticos, *TODO* semánticos).

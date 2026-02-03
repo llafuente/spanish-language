@@ -1,5 +1,5 @@
 import { assertEquals, assertThrows } from "jsr:@std/assert";
-import { parse_text, fix_text, check, count, to_text } from "./text.ts";
+import { count, fix_text, get_errors, parse_text, to_text } from "./text.ts";
 
 Deno.test("check 0", () => {
   const bad_text = `Texto en narrativo.
@@ -13,7 +13,7 @@ Deno.test("check 0", () => {
     "back to text shall be the same",
   );
 
-  const bad_checked = check(bad_analyzed);
+  const bad_checked = get_errors(bad_analyzed);
 
   console.log(bad_checked);
   assertEquals(bad_checked, [
@@ -45,7 +45,7 @@ Deno.test("check 1", () => {
     "back to text shall be the same",
   );
 
-  const bad_checked = check(bad_analyzed);
+  const bad_checked = get_errors(bad_analyzed);
 
   const good_analyzed = parse_text(good_text);
   assertEquals(
@@ -54,7 +54,7 @@ Deno.test("check 1", () => {
     "back to text shall be the same",
   );
 
-  const good_checked = check(good_analyzed);
+  const good_checked = get_errors(good_analyzed);
   assertEquals(good_checked.length, 0, "no errors found");
 
   //console.log(bad_checked);
@@ -111,7 +111,7 @@ Deno.test("check 2", () => {
     "back to text shall be the same",
   );
 
-  const bad_checked = check(bad_analyzed);
+  const bad_checked = get_errors(bad_analyzed);
 
   const good_analyzed = parse_text(good_text);
   assertEquals(
@@ -120,7 +120,7 @@ Deno.test("check 2", () => {
     "back to text shall be the same",
   );
 
-  const good_checked = check(good_analyzed);
+  const good_checked = get_errors(good_analyzed);
 
   assertEquals(good_checked.length, 0, "no errors found");
 
@@ -177,7 +177,7 @@ Deno.test("check 3", () => {
     "back to text shall be the same",
   );
 
-  const bad_checked = check(bad_analyzed);
+  const bad_checked = get_errors(bad_analyzed);
 
   const good_analyzed = parse_text(good_text);
   assertEquals(
@@ -186,7 +186,7 @@ Deno.test("check 3", () => {
     "back to text shall be the same",
   );
 
-  const good_checked = check(good_analyzed);
+  const good_checked = get_errors(good_analyzed);
   assertEquals(good_checked.length, 0, "no errors found");
 
   // console.log(bad_checked)
@@ -225,7 +225,7 @@ Deno.test("check 4", () => {
     "back to text shall be the same",
   );
 
-  const bad_checked = check(bad_analyzed);
+  const bad_checked = get_errors(bad_analyzed);
 
   const good_analyzed = parse_text(good_text);
   assertEquals(
@@ -234,7 +234,7 @@ Deno.test("check 4", () => {
     "back to text shall be the same",
   );
 
-  const good_checked = check(good_analyzed);
+  const good_checked = get_errors(good_analyzed);
   assertEquals(good_checked.length, 0, "no errors found");
 
   // console.log(bad_checked)
@@ -281,7 +281,7 @@ Deno.test("check 5", () => {
     "back to text shall be the same",
   );
 
-  const bad_checked = check(bad_analyzed);
+  const bad_checked = get_errors(bad_analyzed);
 
   const good_analyzed = parse_text(good_text);
   assertEquals(
@@ -290,7 +290,7 @@ Deno.test("check 5", () => {
     "back to text shall be the same",
   );
 
-  const good_checked = check(good_analyzed);
+  const good_checked = get_errors(good_analyzed);
   assertEquals(good_checked.length, 0, "no errors found");
 
   // console.log(bad_checked);
@@ -340,7 +340,7 @@ Para que el texto pueda seguir.`;
     "back to text shall be the same",
   );
 
-  const good_checked = check(good_analyzed);
+  const good_checked = get_errors(good_analyzed);
   assertEquals(good_checked.length, 0, "no errors found");
 });
 
@@ -360,7 +360,7 @@ Y el olvido les atacó y mató. ¿Que ocurre?`;
     "back to text shall be the same",
   );
 
-  const good_checked = check(good_analyzed);
+  const good_checked = get_errors(good_analyzed);
   const good_count = count(good_analyzed);
   assertEquals(good_checked.length, 0, "no errors found");
 
@@ -372,22 +372,22 @@ Y el olvido les atacó y mató. ¿Que ocurre?`;
   });
 });
 
-Deno.test("check 1", () => {
-  //const bad_text = `—Cierra la puerta. —Las palabras eran una súplica, no una orden.`;
-  //const bad_text = `—Cierra la puerta. —Dijo pepe.`;
-  const bad_text = `—Bueno, supongo que esto significa que me quedo. —Hizo un gesto a un niño para que le acercara un taburete—. Menos mal...Hubiese sido una lástima haber tenido que marcharme antes decompartir mis noticias.`
+const good_texts = [
+  `—Cierra la puerta. —Las palabras eran una súplica, no una orden.`,
+  `—Cierra la puerta. —dijo pepe.`,
+  `—Bueno, supongo que esto significa que me quedo. —Hizo un gesto a un niño para que le acercara un taburete—. Menos mal...Hubiese sido una lástima haber tenido que marcharme antes decompartir mis noticias.`,
+];
 
-  const bad_analyzed = parse_text(bad_text);
-  assertEquals(
-    to_text(bad_analyzed),
-    bad_text,
-    "back to text shall be the same",
-  );
+good_texts.forEach((text) => {
+  Deno.test(`check good text: ${text}`, () => {
+    const parsed = parse_text(text);
+    assertEquals(
+      to_text(parsed),
+      text,
+      "back to text shall be the same",
+    );
 
-  const bad_checked = check(bad_analyzed);
-
-  console.log(bad_checked);
-  assertEquals(bad_checked, []);
+    const errors = get_errors(parsed);
+    assertEquals(errors, []);
+  });
 });
-
-
