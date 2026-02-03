@@ -150,7 +150,7 @@ const fixture: {
           location: { column: 1 },
         },
         rule:
-          "sentence shall end with dot, three dots, question or exclamations marks.",
+          "sentence shall end with dot, three dots, colon, question or exclamations marks.",
         type: "error",
         fix: "texto inicial y a mitad ¡otro que no termina!",
       },
@@ -256,7 +256,7 @@ const fixture: {
           location: { column: 1 },
         },
         rule:
-          "sentence shall end with dot, three dots, question or exclamations marks.",
+          "sentence shall end with dot, three dots, colon, question or exclamations marks.",
         type: "error",
         fix: "texto de prueba a lo lorem ipsum.",
       },
@@ -286,7 +286,7 @@ const fixture: {
           location: { column: 1 },
         },
         rule:
-          "sentence shall end with dot, three dots, question or exclamations marks.",
+          "sentence shall end with dot, three dots, colon, question or exclamations marks.",
         type: "error",
         fix: "¿texto que se inicia con una pregunta?",
       },
@@ -330,7 +330,7 @@ const fixture: {
           location: { column: 1 },
         },
         rule:
-          "sentence shall end with dot, three dots, question or exclamations marks.",
+          "sentence shall end with dot, three dots, colon, question or exclamations marks.",
         type: "error",
         fix: "¡texto que se inicia con una exclamación!",
       },
@@ -368,7 +368,7 @@ const fixture: {
           },
         },
         "rule":
-          "sentence shall end with dot, three dots, question or exclamations marks.",
+          "sentence shall end with dot, three dots, colon, question or exclamations marks.",
         "type": "error",
         "fix": "texto inicial y a mitad ¡otro que no termina!",
       },
@@ -406,11 +406,24 @@ const fixture: {
           },
         },
         "rule":
-          "sentence shall end with dot, three dots, question or exclamations marks.",
+          "sentence shall end with dot, three dots, colon, question or exclamations marks.",
         "type": "error",
         "fix": "¡qué me estas contando!",
       },
     ],
+  },
+  {
+    paragraph: `No hay problema:`,
+    fix_paragraph: null,
+    split: [
+      {
+        "text": "No hay problema:",
+        "location": {
+          "column": 1,
+        },
+      },
+    ],
+    errors: [],
   },
 ];
 fixture.forEach((t) => {

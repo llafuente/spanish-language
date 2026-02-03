@@ -126,11 +126,11 @@ export function get_errors(
     }
   }
 
-  if (!lastChar.match(/[?!.…]/)) {
+  if (!lastChar.match(/[?!.…:]/)) {
     output.push({
       where: sentence,
       rule:
-        "sentence shall end with dot, three dots, question or exclamations marks.",
+        "sentence shall end with dot, three dots, colon, question or exclamations marks.",
       type: "error",
       fix: sentence.text +
         get_expected_close_character(sentence.text),
