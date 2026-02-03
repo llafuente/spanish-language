@@ -8,7 +8,7 @@
 * https://www.cambridge.org/core/services/aop-cambridge-core/content/view/39B1C556856D62AF8FC53D3F22435750/S0025100303001373a.pdf/castilian_spanish.pdf
 * https://api.pageplace.de/preview/DT0400.9781107595446_A23761744/preview-9781107595446_A23761744.pdf
 * https://www.rae.es/sites/default/files/Principales_novedades_de_la_Ortografia_de_la_lengua_espanola.pdf
-* https://es.wiktionary.org/wiki/Wikcionario:Referencia/ES/
+* https://es.wiktionary.org/wiki/Wikcionario:Referencia/ES/Pronunciaci%C3%B3n
 * https://iris.univr.it/handle/11562/1042746
 
 # utils

@@ -1,4 +1,4 @@
-import {is_vowel, is_consonant, remove_accents} from "../letter.ts";
+import {is_vowel, is_consonant, remove_accents} from "../../letter.ts";
 import {ACUTE, syllabify} from "../syllabify/syllabify.ts";
 
 // only letter, not composed words

@@ -6,8 +6,7 @@ import {
   syllabify,
 } from "../syllabify/syllabify.ts";
 
-import { remove_accents } from "../letter.ts";
-import { TOKEN_PUNCTUATION, TOKEN_TEXT, tokenize } from "../text/tokenize.ts";
+import { remove_accents } from "../../letter.ts";
 
 const es_to_ipa = {
   "([mn])[bv]": "$1b",
@@ -84,7 +83,7 @@ interface Dialect {
   firstOf: Replacement[][];
 }
 
-const SPANISH_STANDARD: Dialect = {
+export const SPANISH_STANDARD: Dialect = {
   allOf: [
     //  ch
     {
@@ -503,7 +502,7 @@ function apply_replacement(
 
 // yeismo zheísmo
 // ceceo seseo
-// Rehilamiento 
+// Rehilamiento
 const TARGETS = {
   // españa
   "es-ES": ["yeismo", "ceceo"],
@@ -515,52 +514,16 @@ const TARGETS = {
   "rioplatense": ["zheísmo", "seseo"],
   // uruguay
   "es-UY": [],
-}
-
+};
 
 export function to_ipa(
-  sentence: string,
-  options: { target: string } = { target: "es-ES" },
-): string {
-  // console.log(`\n${sentence}\n`);
-  
-  const tokens = tokenize(sentence)
-
-  let text = ""
-  for (let i = 0; i < tokens.length; ++i) {
-    const token = tokens[i];
-    switch (token.type) {
-      case TOKEN_PUNCTUATION:
-        switch (token.punctuation) {
-          case ".":
-            text += "‖";
-            break;
-          case " ":
-          case ",":
-          case ";":
-          case ":":
-            text += ".";
-          default:
-            console.warn(`ignore punctuation: ${token.punctuation}`)
-        }
-
-        break;
-        case TOKEN_TEXT:
-          text += word_to_ipa(token.text, SPANISH_STANDARD)
-          break;
-          default:
-            throw new Error("unreacheable")
-    }
-  }
-
-  return text;
-}
-
-
-export function word_to_ipa(
   word: string,
   dialect: Dialect,
-): string {  
+): string {
+  // TODO handle more characters
+  if (word.indexOf(" ") !== -1) {
+    throw Error("only a single word allowed");
+  }
   const syllables = syllabify(word);
   // console.debug(syllables);
 
@@ -593,17 +556,18 @@ export function word_to_ipa(
       ipa.push("ˈ");
     }
 
-    for(let round = 0; round < 2; ++round) {
+    for (let round = 0; round < 2; ++round) {
       // console.log(`  round ${round}`)
       for (let j = 0; j < dialect.firstOf.length; ++j) {
         const group = dialect.firstOf[j];
         for (let z = 0; z < group.length; ++z) {
           const r = group[z];
-          
-          const appyRule = r.round == round && (r.atIndex === i || r.atIndex === -1) &&
-          (r.previousLetter === lastLetter || r.previousLetter === null) &&
-          (!r.phonologyType || r.phonologyType === syllable.phonology?.type);
-          
+
+          const appyRule = r.round == round &&
+            (r.atIndex === i || r.atIndex === -1) &&
+            (r.previousLetter === lastLetter || r.previousLetter === null) &&
+            (!r.phonologyType || r.phonologyType === syllable.phonology?.type);
+
           // console.log(`  rule[${r.id}] ${i} ${r.previousLetter} ${appyRule}`)
 
           if (appyRule) {
@@ -616,10 +580,11 @@ export function word_to_ipa(
           }
         }
       }
-  
+
       for (let j = 0; j < dialect.allOf.length; ++j) {
         const r = dialect.allOf[j];
-        const appyRule = r.round == round && (r.atIndex === i || r.atIndex === -1) &&
+        const appyRule = r.round == round &&
+          (r.atIndex === i || r.atIndex === -1) &&
           (r.previousLetter === lastLetter || r.previousLetter === null) &&
           (!r.phonologyType || r.phonologyType === syllable.phonology?.type);
 
@@ -630,9 +595,7 @@ export function word_to_ipa(
           [t, done] = apply_replacement(t, r);
         }
       }
-
     }
-
 
     ipa.push(t);
     lastLetter = t[t.length - 1];

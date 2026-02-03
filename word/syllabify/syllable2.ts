@@ -1,127 +1,55 @@
-// based on https://github.com/nicofrem/silabajs/blob/c3f747bda7b32aa0e814fc0e41f59b8fbfe1a986/silabajs.js#L125
-// but this version has many fixes and it's tested
-
 import {
-  is_closed_vowel,
-  is_open_vowel,
-  remove_accents,
-  remove_diaeresis,
+  is_closed_vowel, is_open_vowel
 } from "../letter.ts";
 
-export const HIATO_SIMPLE_TYPE_1 = "Hiato simple tipo 1";
-export const HIATO_SIMPLE_TYPE_2 = "Hiato simple tipo 2";
-export const HIATO_ACENTUAL = "Hiato acentual";
-
-export interface Hiato {
-  type:
-    | typeof HIATO_SIMPLE_TYPE_1
-    | typeof HIATO_SIMPLE_TYPE_2
-    | typeof HIATO_ACENTUAL;
-  syllable: string;
-}
-
-export const DIPHTHONG_CRESCENT = "Diptongo Creciente";
-export const DIPHTHONG_DESCENDING = "Diptongo Decreciente";
-export const DIPHTHONG_HOMOGENEOUS = "Diptongo Homogéneo";
-
-// DIPHTHONGS
-export interface Diphthong {
-  type:
-    | typeof DIPHTHONG_CRESCENT
-    | typeof DIPHTHONG_DESCENDING
-    | typeof DIPHTHONG_HOMOGENEOUS;
-  syllable: string;
-}
-const TRIPHTHONG = "Triptongo";
-
-// Triptongo
-export interface Triphthong {
-  type: typeof TRIPHTHONG;
-  syllable: string;
-}
-
-export type PHONOLOGY_TYPE =
-  | typeof HIATO_SIMPLE_TYPE_1
-  | typeof HIATO_SIMPLE_TYPE_2
-  | typeof HIATO_ACENTUAL
-  | typeof DIPHTHONG_CRESCENT
-  | typeof DIPHTHONG_DESCENDING
-  | typeof DIPHTHONG_HOMOGENEOUS
-  | typeof TRIPHTHONG;
-
-// Aguda
-export const ACUTE = "AGUDA";
-// Lana o grave
-export const PLAIN = "GRAVE";
-// Esdrújula
-export const PROSED = "Esdrújula";
-// Sobresdrújula
-export const OVERPROSED = "Sobresdrújula";
-
 interface Syllable {
-  idx: number;
-  text: string;
-  phonology: Hiato | Diphthong | Triphthong | null;
+    inicioPosicion: number;
+    silaba: string;
+}
+interface Hiato {
+    tipoHiato: string;
+    silabaHiato: string;
+};
+
+interface Diptongo {
+    tipo: string;
+    silaba: string;
+};
+
+interface Triptongo {
+    tipo: string;
+    silaba: string;
+};
+
+interface WordAnalysis {
+  palabra: string; // (String) Palabra ingresada
+  longitudPalabra: number; // (int)    Longitud de la palabra
+  numeroSilaba: number; // (int)    Número de sílabas de la palabra
+  silabas: Syllable[]; // (Array)  Array de objeto que contiene la sílaba (caracter) y la posicion en la palabra
+  tonica: number; // (int)    Posición de la sílaba tónica (empieza en 1)
+  letraTildada: number; // (int)    Posición de la letra tildada (si la hay)
+  acentuacion: string; // (int)    Tipo acentuación de la palabra (Aguda, Grave, Esdrújula y Sobresdrújula)
+  hiato: Hiato[]; // (Array)  Array de objeto que contiene hiato (si la hay)
+  diptongo: Diptongo[]; // (Array)  Array de objeto que contiene diptongo (si la hay)
+  triptongo: Triptongo[]; // (Array)  Array de objeto que contiene triptongo (si la hay)
 }
 
-export interface WordSyllables {
-  word: string;
-  syllables: Syllable[];
-  stressedSyllableIdx: number;
-  accentedLetterIdx: number;
-  accentuation:
-    | typeof ACUTE
-    | typeof PLAIN
-    | typeof PROSED
-    | typeof OVERPROSED;
-}
-/*
+// Declaración de Variables
+const silaba: WordAnalysis = {} as any;
 
-Monosílaba → una sola sílaba: mar, sol, el, un
-Bisílaba → dos sílabas: calor, mano, árbol, libro...
-Trisílaba → tres sílabas: repetir, orquesta, recoger...
-Tetrasílaba → cuatro sílabas: chocolate, ferrocarril, constitución...
-Polisílaba → cinco o más sílabas: computadora, conmemoración,...
-
-Fuente: https://www.gramaticas.net/2014/07/fonetica-y-fonologia.html
-
-*/
+var encontroTonica = undefined; // (bool)   Indica si se ha encontrado la sílaba tónica
 
 /**
  * Devuelve Objeto 'silaba' con los valores calculados
  */
-export function syllabify(word: string): WordSyllables {
-  word = word.toLowerCase().trim();
+export function syllable(palabra: string) {
+  posicionSilabas(palabra);
+  console.log("silaba!!", silaba);
 
-  // TODO whitelist "spanish" letters
-  if (word.indexOf(" ") !== -1) {
-    throw new Error("a word cannot contain spaces");
-  }
-
-  // Declaración de Variables
-  const silaba: WordSyllables = {
-    word,
-
-    syllables: [],
-    stressedSyllableIdx: -1,
-    accentedLetterIdx: -1,
-    accentuation: null as any, // just initialization
-  };
-
-  posicionSilabas(silaba);
-
-  silaba.accentuation = [
-    ACUTE,
-    PLAIN,
-    PROSED,
-    OVERPROSED,
-  ][silaba.syllables.length - silaba.stressedSyllableIdx] as any; // TODO why cast ?
-
-  find_hiato(silaba);
-  find_triptongo(silaba);
-  find_diptongo(silaba);
-
-  return silaba;
+  acentuacion();
+  hiato();
+  diptongoTriptongo();
+  return Object.assign({}, silaba);
 }
 
 /*********************************************************/
@@ -133,47 +61,61 @@ export function syllabify(word: string): WordSyllables {
 /**
  * Realiza cálculo de las sílabas
  *
+ * @param {string} palabra
  * @returns {undefined}
  */
-function posicionSilabas(silaba: WordSyllables) {
-  // Variable que almacena sílaba y la posición de la sílaba
+function posicionSilabas(palabra: string) {
+  silaba.palabra = palabra.toLowerCase().trim();
+  silaba.silabas = [];
 
+  silaba.longitudPalabra = silaba.palabra.length;
+  encontroTonica = false;
+  silaba.tonica = 0;
+  silaba.numeroSilaba = 0;
+  silaba.letraTildada = -1;
+
+  // Variable que almacena sílaba y la posición de la sílaba
+  
   // Se recorre la palabra buscando las sílabas
-  for (let actPos = 0; actPos < silaba.word.length;) {
+  for (let actPos = 0; actPos < silaba.longitudPalabra;) {
+    silaba.numeroSilaba++;
     const start = actPos;
     // Las sílabas constan de tres partes: ataque, núcleo y coda
-    actPos = onset(silaba, silaba.word, actPos);
-    actPos = nucleus(silaba, silaba.word, actPos);
-    actPos = coda(silaba, silaba.word, actPos);
-
+    actPos = ataque(silaba.palabra, actPos);
+    actPos = nucleo(silaba.palabra, actPos);
+    actPos = coda(silaba.palabra, actPos);
+    
     // Guarda sílaba de la palabra
-    silaba.syllables.push({
-      idx: start,
-      phonology: null,
-      text: silaba.word.substring(
+    silaba.silabas.push({
+        inicioPosicion: start,
+        silaba: silaba.palabra.substring(
         start,
         actPos,
-      ),
+        )
     });
+
+    if (encontroTonica && (silaba.tonica == 0)) {
+      silaba.tonica = silaba.numeroSilaba; // Marca la sílaba tónica
+    }
   }
 
   // Si no se ha encontrado la sílaba tónica (no hay tilde), se determina en base a
   // las reglas de acentuación
-  if (silaba.stressedSyllableIdx == -1) {
-    if (silaba.syllables.length < 2) {
-      silaba.stressedSyllableIdx = silaba.syllables.length; // Monosílabos
+  if (!encontroTonica) {
+    if (silaba.numeroSilaba < 2) {
+      silaba.tonica = silaba.numeroSilaba; // Monosílabos
     } else { // Polisílabos
-      const letraFinal = silaba.word[silaba.word.length - 1];
-      const letraAnterior = silaba.word[silaba.word.length - 2];
+      var letraFinal = silaba.palabra[silaba.longitudPalabra - 1];
+      var letraAnterior = silaba.palabra[silaba.longitudPalabra - 2];
 
       if (
         (!esConsonante(letraFinal) || (letraFinal == "y")) ||
         ((letraFinal == "n") ||
           (letraFinal == "s") && !esConsonante(letraAnterior))
       ) {
-        silaba.stressedSyllableIdx = silaba.syllables.length - 1; // Palabra llana
+        silaba.tonica = silaba.numeroSilaba - 1; // Palabra llana
       } else {
-        silaba.stressedSyllableIdx = silaba.syllables.length; // Palabra aguda
+        silaba.tonica = silaba.numeroSilaba; // Palabra aguda
       }
     }
   }
@@ -185,12 +127,12 @@ function posicionSilabas(silaba: WordSyllables) {
  *
  * @returns {int}
  */
-function onset(silaba: WordSyllables, pal: string, pos: number): number {
+function ataque(pal: string, pos: number): number {
   // Se considera que todas las consonantes iniciales forman parte del ataque
   var ultimaConsonante = "a";
 
   while (
-    (pos < silaba.word.length) &&
+    (pos < silaba.palabra.length) &&
     ((esConsonante(pal[pos])) && (pal[pos] != "y"))
   ) {
     ultimaConsonante = pal[pos];
@@ -198,12 +140,12 @@ function onset(silaba: WordSyllables, pal: string, pos: number): number {
   }
 
   // (q | g) + u (ejemplo: queso, gueto)
-  if (pos < silaba.word.length - 1) {
+  if (pos < silaba.longitudPalabra - 1) {
     if (pal[pos] == "u") {
       if (ultimaConsonante == "q") {
         pos++;
       } else if (ultimaConsonante == "g") {
-        const letra = pal[pos + 1];
+        var letra = pal[pos + 1];
         if (
           (letra == "e") || (letra == "é") || (letra == "i") || (letra == "í")
         ) {
@@ -230,17 +172,17 @@ function onset(silaba: WordSyllables, pal: string, pos: number): number {
  * @param {int} pos
  * @returns {int}
  */
-function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
+function nucleo(pal: string, pos: number): number {
   // Sirve para saber el tipo de vocal anterior cuando hay dos seguidas
-  let anterior = 0;
-  let c;
+  var anterior = 0;
+  var c;
 
   // 0 = fuerte
   // 1 = débil acentuada
   // 2 = débil
 
-  if (pos >= silaba.word.length) {
-    throw new Error("invalid word, don't have nucleus");
+  if (pos >= silaba.longitudPalabra) {
+    return pos; // ¡¿No tiene núcleo?!
   }
 
   // Se salta una 'y' al principio del núcleo, considerándola consonante
@@ -249,7 +191,7 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
   }
 
   // Primera vocal
-  if (pos < silaba.word.length) {
+  if (pos < silaba.longitudPalabra) {
     c = pal[pos];
     switch (c) {
       // Vocal fuerte o débil acentuada
@@ -265,8 +207,8 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
       case "Ó":
       case "ò":
       case "Ò":
-        silaba.accentedLetterIdx = pos;
-        silaba.stressedSyllableIdx = silaba.syllables.length + 1;
+        silaba.letraTildada = pos;
+        encontroTonica = true;
         anterior = 0;
         pos++;
         break;
@@ -291,11 +233,12 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
       case "Ù":
       case "ü":
       case "Ü":
-        silaba.accentedLetterIdx = pos;
+        silaba.letraTildada = pos;
         anterior = 1;
         pos++;
-        silaba.stressedSyllableIdx = silaba.syllables.length + 1;
+        encontroTonica = true;
         return pos;
+        break;
       // Vocal débil
       case "i":
       case "I":
@@ -308,8 +251,8 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
   }
 
   // 'h' intercalada en el núcleo, no condiciona diptongos o hiatos
-  let hache = false;
-  if (pos < silaba.word.length) {
+  var hache = false;
+  if (pos < silaba.longitudPalabra) {
     if (pal[pos] == "h") {
       pos++;
       hache = true;
@@ -317,7 +260,7 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
   }
 
   // Segunda vocal
-  if (pos < silaba.word.length) {
+  if (pos < silaba.longitudPalabra) {
     c = pal[pos];
     switch (c) {
       // Vocal fuerte o débil acentuada
@@ -333,9 +276,9 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
       case "Ó":
       case "ò":
       case "Ò":
-        silaba.accentedLetterIdx = pos;
+        silaba.letraTildada = pos;
         if (anterior != 0) {
-          silaba.stressedSyllableIdx = silaba.syllables.length + 1;
+          encontroTonica = true;
         }
         if (anterior == 0) { // Dos vocales fuertes no forman sílaba
           if (hache) {
@@ -374,16 +317,18 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
       case "Ú":
       case "ù":
       case "Ù":
-        silaba.accentedLetterIdx = pos;
+        silaba.letraTildada = pos;
 
         if (anterior != 0) { // Se forma diptongo
-          silaba.stressedSyllableIdx = silaba.syllables.length + 1;
+          encontroTonica = true;
           pos++;
         } else if (hache) {
           pos--;
         }
 
         return pos;
+
+        break;
       // Vocal débil
       case "i":
       case "I":
@@ -391,10 +336,10 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
       case "U":
       case "ü":
       case "Ü":
-        if (pos < silaba.word.length - 1) { // ¿Hay tercera vocal?
-          const siguiente = pal[pos + 1];
+        if (pos < silaba.longitudPalabra - 1) { // ¿Hay tercera vocal?
+          var siguiente = pal[pos + 1];
           if (!esConsonante(siguiente)) {
-            const letraAnterior = pal[pos - 1];
+            var letraAnterior = pal[pos - 1];
             if (letraAnterior == "h") {
               pos--;
             }
@@ -413,7 +358,7 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
   }
 
   // ¿tercera vocal?
-  if (pos < silaba.word.length) {
+  if (pos < silaba.longitudPalabra) {
     c = pal[pos];
     if ((c == "i") || (c == "u")) { // Vocal débil
       pos++;
@@ -432,11 +377,11 @@ function nucleus(silaba: WordSyllables, pal: string, pos: number): number {
  * @param {int} pos
  * @returns {int}
  */
-function coda(silaba: WordSyllables, pal: string, pos: number): number {
-  if ((pos >= silaba.word.length) || (!esConsonante(pal[pos]))) {
+function coda(pal: string, pos: number): number{
+  if ((pos >= silaba.longitudPalabra) || (!esConsonante(pal[pos]))) {
     return pos; // No hay coda
   } else {
-    if (pos == silaba.word.length - 1) { // Final de palabra
+    if (pos == silaba.longitudPalabra - 1) { // Final de palabra
       pos++;
       return pos;
     }
@@ -444,12 +389,12 @@ function coda(silaba: WordSyllables, pal: string, pos: number): number {
     // Si sólo hay una consonante entre vocales, pertenece a la siguiente sílaba
     if (!esConsonante(pal[pos + 1])) return pos;
 
-    const c1 = pal[pos];
-    const c2 = pal[pos + 1];
+    var c1 = pal[pos];
+    var c2 = pal[pos + 1];
 
     // ¿Existe posibilidad de una tercera consonante consecutiva?
-    if ((pos < silaba.word.length - 2)) {
-      const c3 = pal[pos + 2];
+    if ((pos < silaba.longitudPalabra - 2)) {
+      var c3 = pal[pos + 2];
 
       if (!esConsonante(c3)) { // No hay tercera consonante
         // Los grupos ll, lh, ph, ch y rr comienzan sílaba
@@ -509,7 +454,7 @@ function coda(silaba: WordSyllables, pal: string, pos: number): number {
         pos++;
         return pos;
       } else { // Hay tercera consonante
-        if ((pos + 3) == silaba.word.length) { // Tres consonantes al final ¿palabras extranjeras?
+        if ((pos + 3) == silaba.longitudPalabra) { // Tres consonantes al final ¿palabras extranjeras?
           if ((c2 == "y")) { // 'y' funciona como vocal
             if (
               (c1 == "s") || (c1 == "l") || (c1 == "r") || (c1 == "n") ||
@@ -579,151 +524,155 @@ function coda(silaba: WordSyllables, pal: string, pos: number): number {
   return pos;
 }
 
-// https://www.rae.es/dpd/hiato
-function find_hiato(silaba: WordSyllables) {
-  for (let i = 0; i < silaba.syllables.length - 1; i++) {
-    const syllable = silaba.syllables[i];
-    if (syllable.phonology != null) {
-      continue;
+/**
+ * Determina si se forma hiato/s
+ *
+ * @returns {undefined}
+ */
+function hiato() {
+  var vocalFuerteAnterior = false; // Almacena el tipo de vocal (Fuerte o Débil)
+  silaba.hiato = [];
+
+  // La 'u' de "qu" no forma hiato
+  if (
+    (silaba.letraTildada > 1) &&
+    (silaba.palabra[silaba.letraTildada - 1] == "u") &&
+    (silaba.palabra[silaba.letraTildada - 2] == "q")
+  ) {
+    silaba.hiato.push({
+      tipoHiato: "Hiato simple",
+      silabaHiato: silaba.palabra[silaba.letraTildada] + "-" +
+        silaba.palabra[silaba.letraTildada + 1],
+    });
+  }
+
+  for (var i = 0; i < silaba.palabra.length; i++) {
+    // Hiato Acentual
+    if ("íìúù".indexOf(silaba.palabra[i]) > -1) {
+      if (((i > 0) && vocalFuerte(silaba.palabra[i - 1]))) {
+        silaba.hiato.push({
+          tipoHiato: "Hiato acentual",
+          silabaHiato: silaba.palabra[i - 1] + "-" + silaba.palabra[i],
+        });
+        vocalFuerteAnterior = false;
+        continue;
+      }
+
+      if (
+        ((i < (silaba.longitudPalabra - 1)) &&
+          vocalFuerte(silaba.palabra[i + 1]))
+      ) {
+        silaba.hiato.push({
+          tipoHiato: "Hiato acentual",
+          silabaHiato: silaba.palabra[i] + "-" + silaba.palabra[i + 1],
+        });
+        vocalFuerteAnterior = false;
+        continue;
+      }
     }
 
-    const c = silaba.syllables[i].text; // current syllable
-    const n = silaba.syllables[i + 1].text; // next syllable
-
-    const lc = c[c.length - 1]; // last character - current syllable
-    let ln = n[0]; // first character - next syllable
-
-    let text = lc + "-" + ln;
-
-    if (ln == "h") { // h is ignored for hiato
-      ln = n[1]; // first character - next syllable
-      text += ln;
+    // Hiato Simple
+    if (vocalFuerteAnterior && vocalFuerte(silaba.palabra[i])) {
+      silaba.hiato.push({
+        tipoHiato: "Hiato simple",
+        silabaHiato: silaba.palabra[i - 1] + "-" + silaba.palabra[i],
+      });
     }
 
-    const lnc = lc + ln; // last letter
-
-    // console.log("hiato", i, lnc, lnc2);
-    // Fuente: https://www.gramaticas.net/2013/03/ejemplos-de-hiato.html
-    switch (lnc) {
-      case "aa":
-      case "ae":
-      case "ao":
-      case "ea":
-      case "ee":
-      case "eo":
-      case "oa":
-      case "oe":
-      case "oo":
-        syllable.phonology = {
-          type: HIATO_SIMPLE_TYPE_1,
-          syllable: text,
-        };
-        break;
-      case "uu":
-      case "ii":
-        syllable.phonology = {
-          type: HIATO_SIMPLE_TYPE_2,
-          syllable: text,
-        };
-        break;
-
-      // Hiato simple acentuado
-      case "aá":
-      case "aé":
-      case "aó":
-      case "eá":
-      case "eé":
-      case "eó":
-      case "oá":
-      case "oé":
-      case "oó":
-      // Hiato Acentual: formado por una vocal cerrada (i, u) tónica (con tilde) y una vocal abierta (a, e, o) átona:
-      case "aí":
-      case "aú":
-      case "eí":
-      case "eú":
-      case "oí":
-      case "oú":
-      case "ía":
-      case "íe":
-      case "ío":
-      case "úa":
-      case "úe":
-      case "úo":
-        syllable.phonology = {
-          type: HIATO_ACENTUAL,
-          syllable: text,
-        };
+    // Hiato Simple con 'h' intermedio
+    if (
+      vocalFuerteAnterior && silaba.palabra[i] === "h" &&
+      vocalFuerte(silaba.palabra[i + 1])
+    ) {
+      silaba.hiato.push({
+        tipoHiato: "Hiato simple",
+        silabaHiato: silaba.palabra[i - 1] + "-h" + silaba.palabra[i + 1],
+      });
     }
+
+    vocalFuerteAnterior = vocalFuerte(silaba.palabra[i]);
   }
 }
 
-// https://www.rae.es/dpd/diptongo
-function find_diptongo(silaba: WordSyllables) {
-  for (let i = 0; i < silaba.syllables.length; i++) {
-    const syllable = silaba.syllables[i];
-    if (syllable.phonology != null) {
-      continue;
-    }
+/**
+ * Determina si se forma triptongo/s y diptongo/s
+ *
+ * @returns {undefined}
+ */
+function diptongoTriptongo() {
+  silaba.diptongo = [];
+  silaba.triptongo = [];
 
-    // if is enough but i would like to included it in the regex...
-    if (
-      syllable.text.indexOf("que") !== -1 || syllable.text.indexOf("qui") !== -1
-    ) {
+  // Vocal Débil = VD
+  // Vocal Fuerte = VF
+
+  var expresion;
+
+  for (var i = 0; i < silaba.silabas.length; i++) {
+    // Triptongo (VD - VF - VD) = ((i|u)(a|e|o)(i|u))
+    expresion = /((i|u)(a|e|o)(i|u))/g;
+    const m = silaba.silabas[i].silaba.match(expresion);
+    if (m != null) {
+      silaba.triptongo.push({
+        tipo: "Triptongo",
+        silaba: m[0],
+      });
       continue;
     }
 
     // Diptongo Creciente (VD - VF) = ((i|u)(a|e|o))
-    const m2 = syllable.text.match(/((i|u)(a|e|o))/g);
+    expresion = /((i|u)(a|e|o))/g;
+    const m2 = silaba.silabas[i].silaba.match(expresion);
     if (m2 != null) {
-      syllable.phonology = {
-        type: DIPHTHONG_CRESCENT,
-        syllable: m2[0],
-      };
+      silaba.diptongo.push({
+        tipo: "Diptongo Creciente",
+        silaba: m2[0],
+      });
       continue;
     }
 
     // Diptongo Decreciente (VF - VD) : ((a|e|o)(i|u))
-    const m3 = syllable.text.match(/((a|e|o)(i|u))/g);
+    expresion = /((a|e|o)(i|u))/g;
+    const m3 = silaba.silabas[i].silaba.match(expresion);
     if (m3 != null) {
-      syllable.phonology = {
-        type: DIPHTHONG_DESCENDING,
-        syllable: m3[0],
-      };
+      silaba.diptongo.push({
+        tipo: "Diptongo Decreciente",
+        silaba: m3[0],
+      });
       continue;
     }
 
     // Diptongo Homogéneo (VD - VD) : ((i|u)(i|u))
-    const m4 = syllable.text.match(/((i|u)(i|u))/g);
+    expresion = /((i|u)(i|u))/g;
+    const m4 = silaba.silabas[i].silaba.match(expresion);
     if (m4 != null) {
-      syllable.phonology = {
-        type: DIPHTHONG_HOMOGENEOUS,
-        syllable: m4[0],
-      };
+      silaba.diptongo.push({
+        tipo: "Diptongo Homogéneo",
+        silaba: m4[0],
+      });
     }
   }
 }
 
-// https://www.rae.es/dpd/triptongo
-function find_triptongo(silaba: WordSyllables) {
-  for (let i = 0; i < silaba.syllables.length; i++) {
-    const syllable = silaba.syllables[i];
-    // skip, only one phonology
-    if (syllable.phonology != null) {
-      continue;
-    }
-
-    // Triptongo (VD - VF - VD) = ((i|u)(a|e|o)(i|u))
-    //const m = removeDiaeresis(removeAccents(syllable.text)).match(/((i|u)(a|e|o)(i|u|y))/g); // fix: iéi
-    const regex = /((i|u)(a|e|o)(i|u|y))/g;
-    const m = regex.exec(remove_diaeresis(remove_accents(syllable.text))); // fix: iéi
-    if (m != null) {
-      syllable.phonology = {
-        type: TRIPHTHONG,
-        syllable: syllable.text.substring(m.index, m.index + m[0].length),
-      };
-      continue;
-    }
+/**
+ * Determina el tipo de acentuacion de la palabra
+ *
+ * @returns {undefined}
+ */
+function acentuacion() {
+  switch (silaba.numeroSilaba - silaba.tonica) {
+    case 0:
+      silaba.acentuacion = "Aguda";
+      break;
+    case 1:
+      silaba.acentuacion = "Grave (Llana)";
+      break;
+    case 2:
+      silaba.acentuacion = "Esdrújula";
+      break;
+    default:
+      silaba.acentuacion = "Sobresdrújula";
+      break;
   }
 }
 
@@ -768,7 +717,18 @@ function vocalFuerte(c: string): boolean {
  */
 function esConsonante(c: string): boolean {
   if (!vocalFuerte(c)) {
-    return !is_closed_vowel(c);
+    switch (c) {
+      // Vocal débil
+      case "i":
+      case "I":
+      case "u":
+      case "U":
+      case "ü":
+      case "Ü":
+        return false;
+    }
+
+    return true;
   }
 
   return false;

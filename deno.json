@@ -1,8 +1,8 @@
 {
   "tasks": {
-    "rae-crawler": "deno run --check --allow-sys --allow-env --allow-net --allow-read --allow-write --watch ./rae-crawler/main.ts > execution.log",
+    "rae-crawler": "deno run --check --allow-sys --allow-env --allow-net --allow-read --allow-write --watch ./rae-crawler/main.ts > ./rae-crawler/working/execution.log",
     "dev": "deno run --watch main.ts",
-    "test": "deno test --allow-read --allow-write .\\syllabify\\syllabify.test.ts .\\plurals\\to_plural.test.ts .\\letter.test.ts .\\phonetic\\to_ipa.test.ts .\\text\\tokenize.test.ts  --coverage; deno coverage ./coverage --html"
+    "test": "deno test --allow-read --allow-write .\\word\\syllabify\\syllabify.test.ts .\\word\\plural\\to_plural.test.ts .\\letter.test.ts .\\text\\phonetic\\to_ipa.test.ts .\\text\\tokenize.test.ts .\\sentence\\sentence.test.ts .\\text\\text.test.ts --coverage; deno coverage ./coverage --html"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
